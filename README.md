@@ -8,7 +8,7 @@
 
 # 2.  Index
 
-## [Chapter.1](#ch1)
+## [Chapter.1](#1-ch1)
 
 ## [Chapter.2](#chapter2)
 
@@ -17,7 +17,7 @@
 # 3. Example
 
 - - -
-#Ch1 
+#1-ch1
 
 - - -
 #Chapter2
