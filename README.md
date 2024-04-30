@@ -1,2 +1,2 @@
-# CAU 사물인터넷
+<img src="https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=capsule%20render&fontSize=90" />
 ## 2024120378 이한빈
