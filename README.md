@@ -1,2 +1,1 @@
-![CAU IOT](https://capsule-render.vercel.app/api?type=soft&color=f0f5b0&height=300&section=header&text=CAU%20IOT&fontSize=90)
-# 2024120378 이한빈
+<img src="https://capsule-render.vercel.app/api?type=soft&color=f0f5b0&height=200&section=header&text=CAU%20IOT&fontSize=80" />
