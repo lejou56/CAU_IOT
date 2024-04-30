@@ -1,0 +1,53 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "console": "integratedTerminal",
+            "name": "1-17 디버그 Program",
+            "program": "${workspaceFolder}//1-17.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "console": "integratedTerminal",
+            "name": "1-18 디버그 Program",
+            "program": "${workspaceFolder}//1-18.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+
+        {
+            "console": "integratedTerminal",
+            "name": "1-20 디버그 Program",
+            "program": "${workspaceFolder}//1-20.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+    
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome with HTML and JS files",
+            "file": "${workspaceFolder}/index.html",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+    ],
+    "debugAdapters": [
+        {
+            "type": "vscode-node",
+            "request": "launch",
+            "name": "node"
+        }
+    ]
+}
