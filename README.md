@@ -2,5 +2,6 @@
 
 # 1. Introduction
 
+<img src="image/Corejs.jpg" width="400" height="600"/>
 위 코드는 
 # 2.  Index
