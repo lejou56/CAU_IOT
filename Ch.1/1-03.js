@@ -1,4 +1,4 @@
-var a = 'abd';
+var a = 'abc';
 a = a + 'def';
 
 var b = 5;
