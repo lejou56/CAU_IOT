@@ -1,2 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=soft&color=f0f5b0&height=300&section=header&text=CAU%20IOT&fontSize=90" />
-<p>#2024120378 이한빈</p>
+<div style="text-align:center;">
+    <img src="https://capsule-render.vercel.app/api?type=soft&color=f0f5b0&height=300&section=header&text=CAU%20IOT&fontSize=90" />
+    <p>#2024120378 이한빈</p>
+</div>
