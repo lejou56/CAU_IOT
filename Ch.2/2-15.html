@@ -1,0 +1,23 @@
+<!-- 연결프로그램을 Chrome으로 열고 Ctrl + Shift + i 눌러서 콘솔 확인 -->
+<html>
+    <head>
+        <title>CAU_IOT</title>
+    </head>
+    <body>
+        <h1>Website for Code test 2-15.js in Chrome Brower Environment</h1>
+        <p>2024120378 이한빈</p>
+        <script>
+            var a = 1;
+            var outer = function() {
+                var b = 2;
+                var inner = function() {
+                    console.log(b);
+                    console.dir(inner);
+                };
+                inner();
+
+            };
+            outer();
+        </script> 
+    </body>
+</html>
