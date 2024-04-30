@@ -8,20 +8,20 @@
 
 # 2.  Index
 
-## [Chapter.1](#chapter.1)
+## [Chapter.1](#chapter1)
 
-## [Chapter.2](#chapter.2)
+## [Chapter.2](#chapter2)
 
-## [Chapter.3](#chapter.3)
+## [Chapter.3](#chapter3)
 
 # 3. Example
 
 - - -
-#Chapter.1 
+#Chapter1 
 
 - - -
-#Chapter.2
+#Chapter2
 
 - - - 
 
-#Chapter.3
+#Chapter3
