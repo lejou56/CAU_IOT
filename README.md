@@ -25,7 +25,8 @@
 
 - - -
 ## Chapter 1 <br>
-- ### 예제 1-1
+- ### 예제 1-1<br>
+<img src = "image/1-01.PNG">
 
 - - -
 ## Chapter 2
