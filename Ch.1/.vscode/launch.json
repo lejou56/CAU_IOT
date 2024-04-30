@@ -43,11 +43,4 @@
             ]
         },
     ],
-    "debugAdapters": [
-        {
-            "type": "vscode-node",
-            "request": "launch",
-            "name": "node"
-        }
-    ]
 }
