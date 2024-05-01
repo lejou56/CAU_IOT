@@ -49,7 +49,7 @@
      </p>
   <div align="center">
     <img src="image/ch1/메모리영역1.jpg" width="500" height="200"/>
-    <p><b>그림 1. 데이터 할당에 대한 메모리 영역의 변화</b> </p>
+    <p><b>그림 1. 데이터 할당에 대한 메모리 영역의 변화1</b> </p>
   </div>
 
 - ### 예제 1-3<br>
@@ -96,6 +96,17 @@
   <div align="center">
     <img src="image/ch1/메모리영역5.jpg" width="600" height="450"/>
     <p><b>그림 5. 데이터 할당에 대한 메모리 영역의 변화5</b> </p>
+
+- ### 예제 1-7<br>
+  <div align="center">
+    <img src="image/ch1/1-07.PNG">
+    <p><b>예제 1-7. 변수 복사</b> </p>
+  </div>
+     <p>위 예제는 변수 복사에 대한 예제입니다. 메모리 영역에서 표현한 것을 간략하게 화살표와 노드를 이용하여 아래 그림처럼 나타냈습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/메모리영역6.jpg" width="400" height="200"/>
+    <p><b>그림 6. 변수 복사에 대한 메모리 영역의 변화1</b> </p>
 - - -
 ## Chapter 2
 
