@@ -94,7 +94,7 @@
      <p>위 예제는 참조형 데이터의 프로퍼티에 다시 참조형 데이터를 할당하는 경우입니다. 아래 그림은 위 예제를 메모리 영역에서 본 것 입니다.
      </p>
   <div align="center">
-    <img src="image/ch1/메모리영역5.jpg" width="600" height="300"/>
+    <img src="image/ch1/메모리영역5.jpg" width="600" height="450"/>
     <p><b>그림 5. 데이터 할당에 대한 메모리 영역의 변화5</b> </p>
 - - -
 ## Chapter 2
