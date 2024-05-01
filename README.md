@@ -139,11 +139,21 @@
      <p>예제 1-10에서는 가변 객체에 대한 문제점을 다루고 있습니다. user2는 user의 객체를 복사하였고 user2.name을 변경하려 했지만 user와 user2는 같은 주솟값을 복사하고 있습니다. 이에 따라 user2.name의 프로퍼티를 변경하는 것은 user.name의 프로퍼티가 변경된 결과를 낳았습니다. 이는 밑의 출력결과로 확인할 수 있습니다.
      </p>
   <div align="center">
-    <img src="image/ch1/1-10r.PNG" width="400" height="250"/>
-    <p><b>그림 7. 예제 1-10 - 출력결과</b> </p>
+    <img src="image/ch1/1-10r.PNG" width="300" height="100"/>
+    <p><b>예제 1-10 - 출력결과</b> </p>
   </div>
      
- 
+- ### 예제 1-11<br>
+  <div align="center">
+    <img src="image/ch1/1-11.PNG">
+    <p><b>예제 1-11. 객체의 가변성에 따른 문제점의 해결 방법</b> </p>
+  </div>
+     <p>예제 1-10에서는 가변 객체에 대한 문제점을 다루고 있습니다. user2는 user의 객체를 복사하였고 user2.name을 변경하려 했지만 user와 user2는 같은 주솟값을 복사하고 있습니다. 이에 따라 user2.name의 프로퍼티를 변경하는 것은 user.name의 프로퍼티가 변경된 결과를 낳았습니다. 이는 밑의 출력결과로 확인할 수 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-10r.PNG" width="300" height="100"/>
+    <p><b>예제 1-10 - 출력결과</b> </p>
+  </div> 
 - - -
 ## Chapter 2
 
