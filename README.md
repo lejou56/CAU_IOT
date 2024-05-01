@@ -80,7 +80,7 @@
      <p>위 예제는 참조형 데이터의 프로퍼티 재할당을 다룬 예제입니다. 기본형 데이터와 마찬가지로 새로운 데이터를 만들고 그 주소를 a에 저장합니다.
      </p>
   <div align="center">
-    <img src="image/ch1/메모리영역2.jpg" width="500" height="300"/>
+    <img src="image/ch1/메모리영역2.jpg" width="550" height="300"/>
     <p><b>그림 4. 데이터 할당에 대한 메모리 영역의 변화4</b> </p>
 - - -
 ## Chapter 2
