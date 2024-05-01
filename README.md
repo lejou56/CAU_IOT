@@ -85,6 +85,7 @@
   <div align="center">
     <img src="image/ch1/메모리영역2.jpg" width="550" height="300"/>
     <p><b>그림 4. 데이터 할당에 대한 메모리 영역의 변화4</b> </p>
+  </div>
 
 - ### 예제 1-6<br>
   <div align="center">
@@ -96,6 +97,7 @@
   <div align="center">
     <img src="image/ch1/메모리영역5.jpg" width="600" height="450"/>
     <p><b>그림 5. 데이터 할당에 대한 메모리 영역의 변화5</b> </p>
+  </div>
 
 - ### 예제 1-7<br>
   <div align="center">
@@ -105,8 +107,43 @@
      <p>위 예제는 변수 복사에 대한 예제입니다. 메모리 영역에서 표현한 것을 간략하게 화살표와 노드를 이용하여 아래 그림처럼 나타냈습니다.
      </p>
   <div align="center">
-    <img src="image/ch1/메모리영역6.jpg" width="400" height="200"/>
+    <img src="image/ch1/메모리영역6.jpg" width="400" height="250"/>
     <p><b>그림 6. 변수 복사에 대한 메모리 영역의 변화1</b> </p>
+  </div>
+
+- ### 예제 1-8<br>
+  <div align="center">
+    <img src="image/ch1/1-08.PNG">
+    <p><b>예제 1-8. 변수 복사 이후 값 변경 결과 비교(1) - 객체의 프로퍼티 변경 시</b> </p>
+  </div>
+     <p>위 예제는 변수 복사이후 값 변경한 경우에 대한 예제입니다. 자바스크립트에서는 어떤 데이터 타입이든 변수에 할당하기 위해서는 주솟값을 복사해야 하기 때문에, 엄밀하게 말하자면 자바스크립트의 모든 데이터 타입은 참조형 데이터입니다. 다만 기본형은 주솟값을 복사하는 과정이 한 번만 이루어지고, 참조형은 한 단계를 더 거치게 된다는 차이가 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/메모리영역7.jpg" width="400" height="250"/>
+    <p><b>그림 6. 변수 복사에 대한 메모리 영역의 변화1</b> </p>
+  </div>
+
+- ### 예제 1-9<br>
+  <div align="center">
+    <img src="image/ch1/1-09.PNG">
+    <p><b>예제 1-9. 변수 복사 이후 값 변경 결과 비교(2) - 객체 자체를 변경했을 때</b> </p>
+  </div>
+     <p>예제 1-8에서는 객체의 프로퍼티를 변경했다면 예제 1-9에서는 객체 자체를 변경하였습니다. 이 때는 obj2가 obj1의 객체를 복사 후 obj1과는 아예 다른 주소를 참조하기 때문에 두 객체는 완전히 다릅니다.
+     </p>
+
+- ### 예제 1-10<br>
+  <div align="center">
+    <img src="image/ch1/1-10.PNG">
+    <p><b>예제 1-10. 객체의 가변성에 따른 문제점</b> </p>
+  </div>
+     <p>예제 1-10에서는 가변 객체에 대한 문제점을 다루고 있습니다. user2는 user의 객체를 복사하였고 user2.name을 변경하려 했지만 user와 user2는 같은 주솟값을 복사하고 있습니다. 이에 따라 user2.name의 프로퍼티를 변경하는 것은 user.name의 프로퍼티가 변경된 결과를 낳았습니다. 이는 밑의 출력결과로 확인할 수 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-10r.png" width="400" height="250"/>
+    <p><b>그림 7. 예제 1-10 - 출력결과</b> </p>
+  </div>
+     
+ 
 - - -
 ## Chapter 2
 
