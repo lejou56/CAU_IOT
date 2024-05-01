@@ -85,6 +85,17 @@
   <div align="center">
     <img src="image/ch1/메모리영역2.jpg" width="550" height="300"/>
     <p><b>그림 4. 데이터 할당에 대한 메모리 영역의 변화4</b> </p>
+
+- ### 예제 1-6<br>
+  <div align="center">
+    <img src="image/ch1/1-06.PNG">
+    <p><b>예제 1-6. 중첩된 참조형 데이터(객체)의 프로퍼티 할당</b> </p>
+  </div>
+     <p>위 예제는 참조형 데이터의 프로퍼티에 다시 참조형 데이터를 할당하는 경우입니다. 아래 그림은 위 예제를 메모리 영역에서 본 것 입니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/메모리영역5.jpg" width="600" height="300"/>
+    <p><b>그림 5. 데이터 할당에 대한 메모리 영역의 변화5</b> </p>
 - - -
 ## Chapter 2
 
