@@ -257,8 +257,33 @@
     <img src="image/ch1/1-20r.PNG" width="1200" height="350"/>
     <p><b>예제 1-20 - 출력결과</b> </p>
   </div>
+---
+- ### 예제 1-21<br>
+  <div align="center">
+    <img src="image/ch1/1-21.PNG">
+    <p><b>예제 1-21. 빈 요소와 배열의 순회</b> </p>
+  </div>
+     <p> 이 예제는 빈 요소가 있는 배열에 대해 어떻게 순회하는 지 확인 해봅니다. function(v,i)에서 v는 value를 의미하고, i는 index를 의미합니다. 이 때, arr1, arr2에 대해 각 매서드의 출력을 확인해보면 arr2의 0번째 value는 비어있기 때문에 순회 대상에서 제외된 것을 확인할 수 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-21r.PNG" width="450" height="180"/>
+    <p><b>예제 1-21 - 출력결과</b> </p>
+  </div>
+---
+- ### 예제 1-22<br>
+  <div align="center">
+    <img src="image/ch1/1-22.PNG">
+    <p><b>예제 1-22. undefined와 null의 비교</b> </p>
+  </div>
+     <p> 위 예제는 undefined으로 데이터를 할당했을 때 정상적으로 출력 결과가 나오는 것을 보며 이렇게 코드를 짤 시 생길 수 있는 혼동을 확인할 수 있었습니다. 따라서 자바스크립트에서는 <b>값이 없을 경우 'null'을 사용</b>할 것을 권장하며, 이 때 null의 typeof가 object라는 점을 주의해야 합니다. 이는 자바스크립트버그입니다. 또한 데이터 할당을 null로 하였을 때 동등 연산자(==)으로는 undefined와 구분할 수 없기 때문에 일치 연산자(===)을 사용해야 합니다. 이는 아래 예제 출력 결과로 확인할 수 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-22r.PNG" width="450" height="180"/>
+    <p><b>예제 1-22 - 출력결과</b> </p>
+  </div>
+---
 ## Chapter 2
 
-- - - 
+
 
 ## Chapter 3
