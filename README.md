@@ -25,7 +25,7 @@
   * ### [예제 3-20 ~ 3.29](#예제-3-20) <br>
   * ### [예제 3-30 ~ 3.31](#예제-3-30) <br>
 
-# 3. Example
+# 3. Main
 
 ## Chapter 1<br>
 - ### 1장 소개<br>
@@ -284,7 +284,13 @@
 ---
 ## Chapter 2
 - ### 2장 소개<br>
-   2장에서는
+   2장에서는 예제를 통해 실행 컨텍스트(Execution Context)에 대해 공부합니다. <b>실행 컨텍스트란 실행할 코드에 제공할 환경 정보들을 모아놓은 객체</b>로, 자바스크립트의 동적 언어로서의 성격을 가장 잘 파악할 수 있는 개념입니다. 이를 알기 위해 먼저, 스택(stack), 큐(queue)에 대해 알아야 합니다. 스택은 <b>출입구가 하나 뿐인 깊은 우물 같은 데이터 구조</b>이며, 큐는 <b>양쪽이 모두 열려있는 파이프 같은 데이터 구조</b>입니다. 이를 그림으로 나타내면 아래 그림과 같습니다.<br>
+<div align="center">
+  <img src="image/ch2/stack_queue.jpg" width="800" height="400"/>
+  <p><b>그림 1. 스택과 큐 구조</b> </p>
+</div>
+   이 때 실행 컨텍스트를 구성하는 것은 전역 공간에서 자동으로 생성되는 <b>전역 컨텍스트(Global Context)</b>, eval 함수, <b>함수 실행에 의한 컨텍스트</b> 등이 있다. 이 때 eval 함수에 대해서는 크게 다루지 않을 예정이니, 실행 컨텍스트는 크게 2가지로 구성되어 있다고 간주합니다. 이 때 구성되는 컨텍스트는 <b>콜 스택(call stack)</b>에 쌓아 올렸다가, 가장 위에 쌓여있는 컨텍스트와 관련 있는 코드를 실행하는 식으로 전체 코드의 환경과 순서를 보장합니다.<br>
+   실행 컨텍스트 객체는 활성화 되는 시점에 <b>VariableEnvironment, LexcialEnvironment, ThisBinding의 세가지를 수집</b>합니다. 실행 컨텍스트를 생성할 때 VariableEnvironment, LexcialEnvironment은 동일하게 생성된다. 그러나 LexcialEnvironment은 변경 사항이 실시간으로 반영되고 VariableEnvironment은 선언 시점의 LexcialEnvironment의 스냅샷만을 저장한다. <b>LexicalEnvironment를 주로 활용</b>하게 되며 이는 다시 <b>environmentRecord, outerEnvironmentReference 로 구성</b>되어 있다.
 ---
 
 
