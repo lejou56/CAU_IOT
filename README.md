@@ -27,11 +27,10 @@
 
 # 3. Example
 
-- - -
 ## Chapter 1 <br>
 - ### 1장 소개<br>
    1장에서는 먼저 자바스크립트가 데이터를 처리하는 과정을 살펴봄으로써 데이터 타입과 관련된 중요한 개념들을 이해할 것 입니다. 자바스크립트 데이터 타입에는 크게 <b>기본형 타입(primitive type)</b>과 <b>참조형 타입(reference type)</b>이 있습니다. 기본형은 숫자(Number), 문자열(String), 불리안(Boolean), null 등이 있으며, 참조형은 객체가 있으며, 이는 배열(array), 함수(function) 등이 속해 있습니다. 두 가지 데이터 타입은 복제한다는 점에서 공통점을 가지고 있지만, 기본형은 <b>값이 담긴 주솟값을 복제</b>하는 반면, 참조형은 <b>값이 담긴 주솟값들로 이루어진 묶음을 가르키는 주소값을 복제</b>한다는 점에서 큰 차이가 있습니다. 또한, 기본형 데이터들은 기본적으로 <b>불변성(immutability)</b>을 띕니다. 이를 기본적으로 알아두고 예제를 통해 학습해봅시다.
-  
+---
 - ### 예제 1-1<br>
   <div align="center">
     <img src="image/ch1/1-01.PNG">
@@ -39,7 +38,7 @@
   </div>
      <p>위의 예제는 a라는 변수를 선언한 예제입니다. 여기서, a는 변수이면서 식별자입니다. 컴퓨터 용어에서는 변수는 <b>변경 가능한 데이터가 담길 수 있는 공간 또는 그릇</b>이며, 식별자는 어떤 데이터를 식별하는 데 사용하는 이름, 간단히 말하면 <b>변수명</b>이라고 할 수 있습니다.
      </p>
-       
+---    
 - ### 예제 1-2<br>
   <div align="center">
     <img src="image/ch1/1-02.PNG">
@@ -51,7 +50,7 @@
     <img src="image/ch1/메모리영역1.jpg" width="500" height="200"/>
     <p><b>그림 1. 데이터 할당에 대한 메모리 영역의 변화1</b> </p>
   </div>
-
+---
 - ### 예제 1-3<br>
   <div align="center">
     <img src="image/ch1/1-03.PNG">
@@ -62,7 +61,7 @@
   <div align="center">
     <img src="image/ch1/메모리영역2.jpg" width="500" height="200"/>
     <p><b>그림 2. 데이터 할당에 대한 메모리 영역의 변화2</b> </p>
-
+---
 - ### 예제 1-4<br>
   <div align="center">
     <img src="image/ch1/1-04.PNG">
@@ -74,7 +73,7 @@
     <img src="image/ch1/메모리영역3.jpg" width="500" height="300"/>
     <p><b>그림 3. 데이터 할당에 대한 메모리 영역의 변화3</b> </p>
   </div>
-
+---
 - ### 예제 1-5<br>
   <div align="center">
     <img src="image/ch1/1-05.PNG">
@@ -86,7 +85,7 @@
     <img src="image/ch1/메모리영역2.jpg" width="550" height="300"/>
     <p><b>그림 4. 데이터 할당에 대한 메모리 영역의 변화4</b> </p>
   </div>
-
+---
 - ### 예제 1-6<br>
   <div align="center">
     <img src="image/ch1/1-06.PNG">
@@ -98,7 +97,7 @@
     <img src="image/ch1/메모리영역5.jpg" width="600" height="450"/>
     <p><b>그림 5. 데이터 할당에 대한 메모리 영역의 변화5</b> </p>
   </div>
-
+---
 - ### 예제 1-7<br>
   <div align="center">
     <img src="image/ch1/1-07.PNG">
@@ -110,7 +109,7 @@
     <img src="image/ch1/메모리영역6.jpg" width="400" height="250"/>
     <p><b>그림 6. 변수 복사에 대한 메모리 영역의 변화1</b> </p>
   </div>
-
+---
 - ### 예제 1-8<br>
   <div align="center">
     <img src="image/ch1/1-08.PNG">
@@ -122,7 +121,7 @@
     <img src="image/ch1/메모리영역7.jpg" width="400" height="250"/>
     <p><b>그림 6. 변수 복사에 대한 메모리 영역의 변화1</b> </p>
   </div>
-
+---
 - ### 예제 1-9<br>
   <div align="center">
     <img src="image/ch1/1-09.PNG">
@@ -130,7 +129,7 @@
   </div>
      <p>예제 1-8에서는 객체의 프로퍼티를 변경했다면 예제 1-9에서는 객체 자체를 변경하였습니다. 이 때는 obj2가 obj1의 객체를 복사 후 obj1과는 아예 다른 주소를 참조하기 때문에 두 객체는 완전히 다릅니다.
      </p>
-
+---
 - ### 예제 1-10<br>
   <div align="center">
     <img src="image/ch1/1-10.PNG">
@@ -142,7 +141,7 @@
     <img src="image/ch1/1-10r.PNG" width="300" height="100"/>
     <p><b>예제 1-10 - 출력결과</b> </p>
   </div>
-     
+---     
 - ### 예제 1-11<br>
   <div align="center">
     <img src="image/ch1/1-11.PNG">
@@ -154,7 +153,7 @@
     <img src="image/ch1/1-11r.PNG" width="500" height="180"/>
     <p><b>예제 1-11 - 출력결과</b> </p>
   </div> 
-
+---
 - ### 예제 1-12<br>
   <div align="center">
     <img src="image/ch1/1-12.PNG">
@@ -162,7 +161,7 @@
   </div>
      <p>예제 1-11에서는 changeName 함수가 새로운 객체를 반환하도록 수정하였습니다. 하지만 이는 복사할 user의 프로퍼티가 많아지면 일일히 코드를 쳐야하는 단점이 있습니다. 따라서 예제 1-12에서는 복사할 대상 객체의 프로퍼티 개수에 상관 없이 모든 프로퍼티를 복사할 수 있는 예제 코드입니다. 앞의 설명처럼 copyObject은 for in 문법을 이용하여 result 객체에 target 객체의 프로퍼티들을 복사하는 함수입니다. 
      </p>
-
+---
 - ### 예제 1-13<br>
   <div align="center">
     <img src="image/ch1/1-13.PNG">
@@ -174,7 +173,7 @@
     <img src="image/ch1/1-13r.PNG" width="500" height="180"/>
     <p><b>예제 1-13 - 출력결과</b> </p>
   </div> 
-
+---
 - ### 예제 1-14<br>
   <div align="center">
     <img src="image/ch1/1-14.PNG">
@@ -186,7 +185,78 @@
     <img src="image/ch1/1-14r.PNG" width="500" height="180"/>
     <p><b>예제 1-14 - 출력결과</b> </p>
   </div>   
+---
+- ### 예제 1-15<br>
+  <div align="center">
+    <img src="image/ch1/1-15.PNG">
+    <p><b>예제 1-15. 중첩된 객체에 대한 깊은 복사</b> </p>
+  </div>
+     <p> 앞선 예제에서 복사 대상이 침조형 데이터를 포함할 경우 완전한 복사가 이루어지지 않음을 확인하였다. 반대로, 깊은 복사는 복사 대상이 참조형 데이터를 포함하여도 완전히 복사할 수 있다. 예제 1-15의 2번째 쭐을 참고하면 user2는 기존의 user에 대한 복사 뿐 아니라, user.urls 즉, urls 프로퍼티에 대한 복사까지 진행하였습니다. 이렇게 코드를 구성하면 urls 프로퍼티 내부까지 복사하여 새로운 데이터가 만들어지므로 온전한 복사 즉, 깊은 복사가 이루어졌습니다. 예제 1-15의 출력 결과를 보면, 복사가 제대로 이루어졌음을 확인할 수 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-15r.PNG" width="500" height="180"/>
+    <p><b>예제 1-15 - 출력결과</b> </p>
+  </div>    
 - - -
+- ### 예제 1-16<br>
+  <div align="center">
+    <img src="image/ch1/1-16.PNG">
+    <p><b>예제 1-16. 객체의 깊은 복사를 수행하는 범용 함수</b> </p>
+  </div>
+     <p> 예제 1-15를 참고하여 깊은 복사를 할 수 있는 copyObjectDeep이라는 함수를 새로 정의하였습니다. 이는 target이 null이 아니면서 객체인 경우 재귀적 구조를 통해 깊은 복사가 이루어지게 하였으며 객체가 아닐 경우에는 target을 복사하여 깊은 복사가 이루어지게 끔 구성하였습니다.
+     </p>
+---
+- ### 예제 1-17<br>
+  <div align="center">
+    <img src="image/ch1/1-17.PNG">
+    <p><b>예제 1-17. 깊은 복사 결과 확인</b> </p>
+  </div>
+     <p> 예제 1-16에서 깊은 복사를 하도록 하는 copyObjectDeep 함수를 만들어 보았다. 예제 1-17에서는 이를 확인해보았으며, 출력 결과를 보아 잘 작동함을 알 수 있다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-17r.PNG" width="1200" height="200"/>
+    <p><b>예제 1-17 - 출력결과</b> </p>
+  </div>  
+  ---
+- ### 예제 1-18<br>
+  <div align="center">
+    <img src="image/ch1/1-18.PNG">
+    <p><b>예제 1-18. JSON을 활용한 간단한 깊은 복사</b> </p>
+  </div>
+     <p> 추가적으로 객체를 JSON 문법으로 표현된 문자열로 전환했다가 다시 JSON 객체로 바꾸는 방식을 이용하여 깊은 복사를 진행할 수 있습니다. 다만, 이 방법은 매서드나 숨겨전 프로퍼티인(__proto__) 또는 getter/setter 등 JSON으로 변경할 수 없는 프로퍼티들을 모두 무시합니다. 아래의 출력 결과를 보면 이를 확인할 수 있습니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-18r.PNG" width="1200" height="200"/>
+    <p><b>예제 1-18 - 출력결과</b> </p>
+  </div>
+---
+- ### 예제 1-19<br>
+  <div align="center">
+    <img src="image/ch1/1-19.PNG">
+    <p><b>예제 1-19. 자동으로 undefined를 부여하는 경우</b> </p>
+  </div>
+     <p> 자바스크립트에서는 undefined와 null은 다릅니다. 일반적으로 자바스크립트 코더들은 변수에 값이 없다면 null을 대입하여 undefined를 피하려고 합니다. 이를 통일하지 않으면 자신의 코드에 에러가 발생하였을 때 혼동이 올 수 있기 때문입니다. 자바스크립트는 세 가지 경우에 대해 자동으로 undeined를 부여합니다.<br> 
+      1) 값을 대입하지 않은 변수, 즉 데이터 영역의 메모리 주소를 지정하지 않은 식별자에 접근할 때<br>
+      2) 객체 내부의 존재하지 않는 프로퍼티에 접근하려고 할 때<br> 
+      3) return 문이 없거나 호출되지 않은 함수의 실행 결과<br>
+      예제를 통해 이를 확인합니다.  
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-19r.PNG" width="800" height="400"/>
+    <p><b>예제 1-19 - 출력결과</b> </p>
+  </div>
+---
+- ### 예제 1-20<br>
+  <div align="center">
+    <img src="image/ch1/1-20.PNG">
+    <p><b>예제 1-20. undefined와 배열</b> </p>
+  </div>
+     <p> 추가로 값을 대입하지 않은 배열에 대해서는 특이한 동작을 확인할 수 있습니다. 아래의 출력 결과를 확인해보면, 어느 값도 할당되지 않아 empty로 표시되는 것을 볼 수 있습니다. 이는 'undefined를 할당한 요소'랑은 완전히 다릅니다.
+     </p>
+  <div align="center">
+    <img src="image/ch1/1-20r.PNG" width="1200" height="350"/>
+    <p><b>예제 1-20 - 출력결과</b> </p>
+  </div>
 ## Chapter 2
 
 - - - 
