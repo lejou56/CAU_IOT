@@ -484,5 +484,44 @@
     <p><b>예제 2-13 - 출력결과</b> </p>
  </div> 
 
-     
+---
+- ### 예제 2-14<br>
+  <div align="center">
+    <img src="image/ch2/2-14.PNG">
+    <p><b>예제 2-14.스코프 체인 확인(1) - 크롬 전용</b> </p>
+  </div>
+     <p> 크롬 브라우저 환경에서는 스코프 체인 중 현재 실행 컨텍스트를 제외한 상위 스코프 정보들을 개발자 도구의 콘솔을 통해 간단하게 확인할 수 있습니다. 확인하는 방법은 함수 내부에서 함수를 출력하는 것입니다. 위 예제를 크롬 브라우저 환경에서 outer 함수의 스코프를 확인해본 결과 {b, inner}가 아닌 {inner}만이 표시됩니다. 이는 크롬에서 함수 내부에서 실제로 호출할 외부 변수들의 정보만 보여준다는 특징 때문에 그렇습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch2/2-14r.PNG" width="600" height="350"/>
+    <p><b>예제 2-14 - 출력결과</b> </p>
+ </div> 
+
+---
+- ### 예제 2-15<br>
+  <div align="center">
+    <img src="image/ch2/2-15.PNG">
+    <p><b>예제 2-15.스코프 체인 확인(2) - 크롬 전용</b> </p>
+  </div>
+     <p> 식별자 inner 함수 내에서 b를 호출하게 되면 스코프에 b가 추가된 것을 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch2/2-15r.PNG" width="600" height="350"/>
+    <p><b>예제 2-15 - 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 2-16<br>
+  <div align="center">
+    <img src="image/ch2/2-16.PNG">
+    <p><b>예제 2-16.스코프 체인 확인(3) - 크롬 전용</b> </p>
+  </div>
+     <p> console.dir 매서드를 이용하여 함수 내부에서 함수를 출력하는 대신 'debugger;'를 사용하여 확인하는 방법도 있습니다. 이 방법을 사용하면 더 정확한 정보를 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch2/2-16r.PNG" width="600" height="350"/>
+    <p><b>예제 2-16 - 출력결과</b> </p>
+ </div>
+ 
+ ---
 ## Chapter 3
