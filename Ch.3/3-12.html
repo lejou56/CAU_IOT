@@ -1,0 +1,23 @@
+<!-- 연결프로그램을 Chrome으로 열고 Ctrl + Shift + i 눌러서 콘솔 확인 -->
+<html>
+    <head>
+        <title>CAU_IOT</title>
+    </head>
+    <body>
+        <h1>Website for Code test 3-12.js in Chrome Brower Environment</h1>
+        <p>2024120378 이한빈</p>
+        <script>
+            setTimeout(function() { console.log(this); }, 300);
+
+            [1, 2, 3, 4, 5] .forEach(function(x) {
+                console.log(this, x);
+            });
+
+            document.body.innerHTML += '<button id="a">클릭</button>';
+            document.body.querySelector('#a')
+                .addEventListener('click', function(e){
+                    console.log(this, e);
+                });
+        </script> 
+    </body>
+</html>
