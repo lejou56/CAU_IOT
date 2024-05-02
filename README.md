@@ -471,7 +471,7 @@
        * 2번째 줄: outer 실행 컨텍스트의 environmentRecord에 {inner} 식별자를 저장합니다. outerEnvironmentReference에는 outer 함수가 선언될 당시의 LexcialEnvironment, 즉 {Global, {a, outer} }에 담깁니다.<br>
        * 3번째 줄: outer 스코프에 있는 변수 inner에 f2를 할당합니다.<br>
        * 7번째 줄: inner 함수를 호출합니다. 이예 따라 outer 실행 컨텍스트는 7번째 줄에서 일시중단되고. inner 실행 컨텍스트가 활성화되오 3번째 줄로 이동합니다.<br>
-       * 3번째 즐: inner 실햅 컨텍스트의  environmentRecord에 {a} 식별자를 저장합니다. outerEnvironmentReference에는 inner 함수가 선언될 당시의 LexcialEnvironment, 즉 {outer, {inner} }에 담깁니다.<br>
+       * 3번째 줄: inner 실햅 컨텍스트의  environmentRecord에 {a} 식별자를 저장합니다. outerEnvironmentReference에는 inner 함수가 선언될 당시의 LexcialEnvironment, 즉 {outer, {inner} }에 담깁니다.<br>
        * 4번째 줄: 식별자 a에 접근하고자 합니다. 현재 활성화 상태인 inner 컨텍스트의 environmentRecord에서 a를 검색합니다. 여기에는 a가 발견되었지만 아직 할당된 값이 없습니다.(undefined 출력)<br>
        * 5번째 줄: inner 스코프에 있는 변수 a에 3을 할당합니다.
        * 6번째 줄: inner 함수 실행이 종료됩니다. inner 실행 컨텍스트가 콜 스택에서 제거되고, 바로 아래의 outer 실행 컨텍스트가 다시 활성화되면서, 앞서 중단했던 7번째의 다음 줄로 이동합니다.
