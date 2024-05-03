@@ -867,12 +867,62 @@
   ---
 - ### 예제 3-27<br>
   <div align="center">
-    <img src="image/ch3/3-27.PNG">
+    <img src="image/ch3/3-27-1.PNG">
+    <img src="image/ch3/3-27-2.PNG">
     <p><b>예제 3-27. 내부함수에 this 전달 - call vs. bind</b> </p>
   </div>
-     <p> 앞의 예제에서 this를 우회하는 방법으로 self 등의 변수
+     <p> 앞의 예제에서 this를 우회하는 방법으로 self 변수 등을 사용하는 방법을 소개하였었는데 apply, call, bind를 이용하여 더 간단하게 처리할 수 있습니다
      </p>
  <div align="center">
-    <img src="image/ch3/3-26r.PNG">
-    <p><b>예제 3-26 - 출력결과</b> </p>
+    <img src="image/ch3/3-27-1r.PNG">
+    <img src="image/ch3/3-27-2r.PNG">
+    <p><b>예제 3-27 - 출력결과</b> </p>
  </div>  
+
+  ---
+- ### 예제 3-28<br>
+  <div align="center">
+    <img src="image/ch3/3-28.PNG">
+    <p><b>예제 3-28. bind 메서드 - 내부함수에 this 전달</b> </p>
+  </div>
+     <p> 또한 콜백 함수를 인자로 받는 함수나 매서드 중에서 기본적으로 콜백 함수 내에서의 this에 관여하는 함수 또는 메서드에 대해서도 bind 메서드를 이용하여 this를 설정할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-28.PNG">
+    <p><b>예제 3-28 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-29<br>
+  <div align="center">
+    <img src="image/ch3/3-29.PNG">
+    <p><b>예제 3-29. 화살표 함수 내부에서의 this</b> </p>
+  </div>
+     <p> 앞의 예제에서 살펴봤듯이 화살표 함수는 실행 컨텍스트 생성 시 this를 바인딩하는 과정이 제외되었습니다. 하지만 이렇게 this는 상위 스코프를 가르키게 되어 별도로 this를 우회할 필요 없이 간결하게 사용 가능합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-29r.PNG">
+    <p><b>예제 3-29 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-30<br>
+  <div align="center">
+    <img src="image/ch3/3-30.PNG">
+    <p><b>예제 3-30. thisArg를 받는 경우 예시 - forEach 메서드</b> </p>
+  </div>
+     <p> 콜백 함수를 인자로 받는 메서드 중 일부는 추가로 this를 지정할 객체를 인자(thisarg)로 지정할 수 있는 경우가 있습니다. 이와 같은 경우 콜백 함수 내에서 this 값을 원하는 대로 변경할 수 있어 더 용이하게 사용가능합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-30r.PNG">
+    <p><b>예제 3-30 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-31<br>
+  <div align="center">
+    <img src="image/ch3/3-31.PNG">
+    <p><b>예제 3-31. 콜백 함수와 함께 thisArg를 인자로 받는 메서드</b> </p>
+  </div>
+     <p> 위의 코드들이 앞에서 설명한 this를 지정할 객체를 인자로 지정할 수 있는 경우들입니다.
+     </p>
