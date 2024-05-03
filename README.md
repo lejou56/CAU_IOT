@@ -798,10 +798,6 @@
   </div>
      <p> call/apply 메서드를 활용하여 생성자 내부에서 다른 생성자와 공통된 내용이 있을 경우 달느 생성자를 호출하여 간단하게 반복을 줄일 수 있습니다.
      </p>
- <div align="center">
-    <img src="image/ch3/3-21r.PNG">
-    <p><b>예제 3-21 - 출력결과</b> </p>
- </div> 
 
   ---
 - ### 예제 3-22<br>
@@ -833,14 +829,50 @@
 - ### 예제 3-24<br>
   <div align="center">
     <img src="image/ch3/3-24.PNG">
-    <p><b>예제 3-23. call/apply 메서드의 활용 3-2) 여러 인수를 받는 메서드(Math.max/Math.min)에 apply를 적용</b> </p>
+    <p><b>예제 3-24. call/apply 메서드의 활용 3-3) ES6의 펼치기 연산자 활용</b> </p>
   </div>
-     <p> 바로 지정받아야할 객체를 없으므로 this를 지정하는 인자는 null로 설정하고 위와 같이 간단하게 구할 수 있습니다.
+     <p> 추가적으로 펼치기 연산자(spread operator)를 이용하면 더 간단하게 구현 가능합니다.
      </p>
  <div align="center">
     <img src="image/ch3/3-24r.PNG">
-    <p><b>예제 3-23 - 출력결과</b> </p>
+    <p><b>예제 3-24 - 출력결과</b> </p>
  </div> 
 
-
+  ---
+- ### 예제 3-25<br>
+  <div align="center">
+    <img src="image/ch3/3-25.PNG">
+    <p><b>예제 3-25. bind 메서드 - this 지정과 부분 적용 함수 구현</b> </p>
+  </div>
+     <p> bind 메서드는 call과 비슷하지만 즉시 호출화지는 않고 넘겨 받은 this 및 인수들을 바탕으로 새로운 함수를 반환하기만 하는 매서드입니다. 다시 새로운 함수를 호출할 때 인수를 넘기면 그 인수들은 기존 bind 메서드를 호출할 때 전달했던 인수들의 뒤에 이어서 등록됩니다. 예제를 통해 이를 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-25r.PNG">
+    <p><b>예제 3-25 - 출력결과</b> </p>
+ </div> 
  
+  ---
+- ### 예제 3-26<br>
+  <div align="center">
+    <img src="image/ch3/3-26.PNG">
+    <p><b>예제 3-26. bind 메서드 - name 프로퍼티</b> </p>
+  </div>
+     <p> bind 매서드를 사용하면 name 프로퍼티에 bound라는 접두어가 붙습니다. 어떤 함수의 new 프로퍼티가 'bound xxx'라면 이는 곧 함수명이 xxx인 원본 함수에 bind 메서드를 적용한 새로운 함수라는 의미가 되므로 코드를 추적하기 용이합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-26r.PNG">
+    <p><b>예제 3-26 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-27<br>
+  <div align="center">
+    <img src="image/ch3/3-27.PNG">
+    <p><b>예제 3-27. 내부함수에 this 전달 - call vs. bind</b> </p>
+  </div>
+     <p> 앞의 예제에서 this를 우회하는 방법으로 self 등의 변수
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-26r.PNG">
+    <p><b>예제 3-26 - 출력결과</b> </p>
+ </div>  
