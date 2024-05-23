@@ -1,0 +1,28 @@
+<!-- 연결프로그램을 Chrome으로 열고 Ctrl + Shift + i 눌러서 콘솔 확인 -->
+<html>
+    <head>
+        <title>CAU_IOT</title>
+    </head>
+    <body>
+        <h1>Website for Code test 5-09.js in Chrome Brower Environment</h1>
+        <p>2024120378 이한빈</p>
+        <script>
+        var fruits = ['apple', 'banana', 'peach'];
+        var $ul = document.createElement('ul');
+
+        var alertFruitBuilder = function (fruit) {
+            return function () {
+                alert('your choice is ' + fruit);
+            };
+        };
+        fruits.forEach(function (fruit) {
+            var $li = document.createElement('li');
+            $li.innerText = fruit;
+            $li.addEventListener('click' , alertFruitBuilder(fruit));
+            $ul.appendChild($li);
+        });
+        document.body.appendChild($ul);
+        alertFruitBuilder(fruits[1]);
+        </script> 
+    </body>
+</html>
