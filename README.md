@@ -940,28 +940,46 @@
 ---
 ## Chapter 4
 - ### 4장 소개<br>
-   2장에서는 예제를 통해 실행 컨텍스트(Execution Context)에 대해 공부합니다. <b>실행 컨텍스트란 실행할 코드에 제공할 환경 정보들을 모아놓은 객체</b>로, 자바스크립트의 동적 언어로서의 성격을 가장 잘 파악할 수 있는 개념입니다. 이를 알기 위해 먼저, 스택(stack), 큐(queue)에 대해 알아야 합니다. 스택은 <b>출입구가 하나 뿐인 깊은 우물 같은 데이터 구조</b>이며, 큐는 <b>양쪽이 모두 열려있는 파이프 같은 데이터 구조</b>입니다. 이를 그림으로 나타내면 아래 그림과 같습니다.<br>
-<div align="center">
-  <img src="image/ch2/stack_queue.jpg" width="800" height="400"/>
-  <p><b>그림 2-1. 스택과 큐 구조</b> </p>
-</div>
-   <p>이 때 실행 컨텍스트를 구성하는 것은 전역 공간에서 자동으로 생성되는 <b>전역 컨텍스트(Global Context)</b>, eval 함수, <b>함수 실행에 의한 컨텍스트</b> 등이 있다. 이 때 eval 함수에 대해서는 크게 다루지 않을 예정이니, 실행 컨텍스트는 크게 2가지로 구성되어 있다고 간주합니다. 이 때 구성되는 컨텍스트는 <b>콜 스택(call stack)</b>에 쌓아 올렸다가, 가장 위에 쌓여있는 컨텍스트와 관련 있는 코드를 실행하는 식으로 전체 코드의 환경과 순서를 보장합니다.<br>
-   실행 컨텍스트 객체는 활성화 되는 시점에 <b>VariableEnvironment, LexcialEnvironment, ThisBinding의 세가지를 수집</b>합니다. 실행 컨텍스트를 생성할 때 VariableEnvironment, LexcialEnvironment은 동일하게 생성된다. 그러나 LexcialEnvironment은 변경 사항이 실시간으로 반영되고 VariableEnvironment은 선언 시점의 LexcialEnvironment의 스냅샷만을 저장한다. <b>LexicalEnvironment를 주로 활용</b>하게 되며 이는 다시 <b>environmentRecord, outerEnvironmentReference 로 구성</b>되어 있다.<br>
-   environmentRecord는 매개변수 식별자, 변수 식별자,선언한 함수의 식별자 등을 수집하며 이 때문에 <b>호이스팅(Hoisting)</b>이라는 개념이 사용된다. 이는 코드 해석을 좀 더 수월하게 하기 위해 environmentRecord의 수집 과정을 추상화한 개념이다.<br>
-   outerEnvironmentReference는 직전 컨텍스트의 LexicalEnvironment를 정보를 참고하며 이 때문에 <b>스코프(Scope)</b>가 형성되고, 스코프 체인을 통해 상위 컨텍스트에 접근할 수 있다.<br>
-   위의 설명으로는 충분한 이해가 어려우니 여러 예제를 통해 학습해봅시다.
-    </p>
-</div> 
+   4장에서는 예제를 통해 콜백 함수에 대해서 공부합니다. 먼저, 콜백 함수(call back function)는 다른 코드의 인자로 넘겨주는 함수입니다. 콜백 함수는 제어권과 관련이 있는데 정리하자면, 콜백 함수는 다른 코드 에게 인자로 넘겨줌으로써 그 제어권도 함께 위임한 함수입니다. 다양한 예제를 통해서 콜백 함수에 대해 알아봅니다.<br>
 
 ---
-- ### 예제 2-1<br>
+- ### 예제 4-1<br>
   <div align="center">
-    <img src="image/ch2/2-01.PNG">
-    <p><b>예제 2-1. 실행 컨텍스트와 콜 스택</b> </p>
+    <img src="image/ch4/4-01.PNG">
+    <p><b>예제 4-1. 콜백 함수 예제(1-1) setInterval</b> </p>
   </div>
-     <p> 먼저 위의 예제의 실행 컨텍스트 실행에 대한 콜 스택은 아래 그림과 같이 쌓였다가 사라진다. 글로 설명하면, 처음 코드를 실행하는 순간 전역 컨텍스트가 콜 스택에 담깁니다. 그리고 11번째 줄에서 outer 함수를 호출하면 자바스크립트 엔진은 outer에 대한 환경 정보를 수집해서 outer 실행 컨텍스트를 생성한 후 콜 스택에 담습니다. 이 때, 전역 컨텍스트와 관련된 코드의 실행을 일시중단하고 대신 outer 실행 컨텍스트와 관련된 코드, 즉 outer 함수 내부의 코드들을 순차로 실행합니다. 8번째 줄에서 마찬가지로 inner 함수를 호출하면서 inner 실행 컨텍스트를 생성한 후 콜 스택에 담습니다. 그럼 다시 outer와 관련된 코드의 실행을 일시중단하고 inner 함수 내부의 코드를 순서대로 진행할 것입니다. inner 함수 내부에서 a 변수에 값 3을 할당하고 나면 inner 함수의 실행이 종료되면서 inner 실행 컨텍스트가 콜 스택에 제거됩니다. 그러면 outer 실행 컨텍스트를 중단 했던 8번째 줄의 다음 줄부터 이어서 실행합니다. 9번째 줄을 실행하고 나면 outer 함수의 실행이 종료되면서 outer 실행 컨덱스트가 콜 스택에 제거됩니다. 마지막으로 전역 컨텍스트를 중단 했던 11번째 줄의 다음 줄부터 이어서 실행합니다. 12번째 줄을 실행하고 나면 전역 컨텍스트도 제거되고, 콜 스택에는 아무것도 남지 않은 상태로 종료됩니다.
+     <p> 우선, setInterval 메세드 같은 경우 매개변수로는 func, delay 값은 반드시 전달해야하고 세번째 매개변수부터는 선택적입니다. func는 함수이고, delay는 ms단위의 숫자이며, 나머지는 func 함수를 실행할 때 매개변수로 전달할 인자입니다. 또한 clearInterval 같은 경우, 반복 실행되는 중간에 종료할 수 있게하는 기능을 합니다. 따라서 아래와 같은 결과값을 얻을 수 있습니다. 
      </p> 
  <div align="center">
-    <img src="image/ch2/call_stack.jpg" width="350" height="250"/>
-    <p><b>그림 2-2. 콜 스택</b> </p>
+    <img src="image/ch4/4-01r.PNG">
+    <p><b>예제 4-1. 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 4-2<br>
+  <div align="center">
+    <img src="image/ch4/4-02.PNG">
+    <p><b>예제 4-2. 콜백 함수 예제(1-2) setInterval</b> </p>
+  </div>
+     <p> 이는, timer 변수에 setInerval의 ID 값이 담기고 setInterval(cb,Func, 300);이라는 코드에서 setInerval이 제어권을 가집니다.
+     </p> 
+ <div align="center">
+    <img src="image/ch4/4-02r.PNG">
+    <p><b>예제 4-2. 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 4-3<br>
+  <div align="center">
+    <img src="image/ch4/4-03.PNG">
+    <p><b>예제 4-3. 콜백 함수 예제(2-1) Array.prototype.map</b> </p>
+  </div>
+      우선 map 메서드는 아래와 같이 동작하게 됩니다.
+      <div>
+       Array.prototype.map(callback[, thisArg])
+       callback: functin(currentValue, index, array)
+      </div>
+ <div align="center">
+    <img src="image/ch4/4-03r.PNG">
+    <p><b>예제 4-3. 출력결과</b> </p>
  </div>
