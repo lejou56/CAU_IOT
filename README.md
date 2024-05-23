@@ -18,8 +18,8 @@
   * ### [예제 2-1 ~ 2.9](#예제-2-1) <br>
   * ### [예제 2-10 ~ 2.16](#예제-2-10) <br>
   
-- ## [3장](#chapter3)
-  * ### [3장 소개](#3장-소개)<br>
+- ## [Chapter 3: this](#chapter3)
+  * ### [소개](#3장-소개)<br>
   * ### [예제 3-1 ~ 3.9](#예제-3-1) <br>
   * ### [예제 3-10 ~ 3.19](#예제-3-10) <br>
   * ### [예제 3-20 ~ 3.29](#예제-3-20) <br>
@@ -167,7 +167,7 @@
     <img src="image/ch1/1-13.PNG">
     <p><b>예제 1-13. copyObject를 이용한 객체 복사</b> </p>
   </div>
-     <p>예제 1-13은 예제 1-12에서 새로 만든 copyObject 함수를 이용하여 객체를 복사하는 예제 코드입니다. user2는 user를 복사하고 user2.name은 'Jung'으로 새로 할당합니다. 이를 console.log 매서드를 이용하여 결과를 확인해 보면 아래 결과와 같습니다. 우리가 바라는 대로 각 user의 name은 다르게 할당된 것을 확인할 수 있습니다.
+     <p>예제 1-13은 예제 1-12에서 새로 만든 copyObject 함수를 이용하여 객체를 복사하는 예제 코드입니다. user2는 user를 복사하고 user2.name은 'Jung'으로 새로 할당합니다. 이를 console.log 메서드를 이용하여 결과를 확인해 보면 아래 결과와 같습니다. 우리가 바라는 대로 각 user의 name은 다르게 할당된 것을 확인할 수 있습니다.
      </p>
   <div align="center">
     <img src="image/ch1/1-13r.PNG" width="500" height="180"/>
@@ -191,7 +191,7 @@
     <img src="image/ch1/1-15.PNG">
     <p><b>예제 1-15. 중첩된 객체에 대한 깊은 복사</b> </p>
   </div>
-     <p> 앞선 예제에서 복사 대상이 침조형 데이터를 포함할 경우 완전한 복사가 이루어지지 않음을 확인하였다. 반대로, 깊은 복사는 복사 대상이 참조형 데이터를 포함하여도 완전히 복사할 수 있다. 예제 1-15의 2번째 쭐을 참고하면 user2는 기존의 user에 대한 복사 뿐 아니라, user.urls 즉, urls 프로퍼티에 대한 복사까지 진행하였습니다. 이렇게 코드를 구성하면 urls 프로퍼티 내부까지 복사하여 새로운 데이터가 만들어지므로 온전한 복사 즉, 깊은 복사가 이루어졌습니다. 예제 1-15의 출력 결과를 보면, 복사가 제대로 이루어졌음을 확인할 수 있습니다.
+     <p> 앞선 예제에서 복사 대상이 침조형 데이터를 포함할 경우 완전한 복사가 이루어지지 않음을 확인하였습니다. 반대로, 깊은 복사는 복사 대상이 참조형 데이터를 포함하여도 완전히 복사할 수 있습니다. 예제 1-15의 2번째 쭐을 참고하면 user2는 기존의 user에 대한 복사 뿐 아니라, user.urls 즉, urls 프로퍼티에 대한 복사까지 진행하였습니다. 이렇게 코드를 구성하면 urls 프로퍼티 내부까지 복사하여 새로운 데이터가 만들어지므로 온전한 복사 즉, 깊은 복사가 이루어졌습니다. 예제 1-15의 출력 결과를 보면, 복사가 제대로 이루어졌음을 확인할 수 있습니다.
      </p>
   <div align="center">
     <img src="image/ch1/1-15r.PNG" width="500" height="180"/>
@@ -211,7 +211,7 @@
     <img src="image/ch1/1-17.PNG">
     <p><b>예제 1-17. 깊은 복사 결과 확인</b> </p>
   </div>
-     <p> 예제 1-16에서 깊은 복사를 하도록 하는 copyObjectDeep 함수를 만들어 보았다. 예제 1-17에서는 이를 확인해보았으며, 출력 결과를 보아 잘 작동함을 알 수 있다.
+     <p> 예제 1-16에서 깊은 복사를 하도록 하는 copyObjectDeep 함수를 만들어 보았습니다. 예제 1-17에서는 이를 확인해보았으며, 출력 결과를 보아 잘 작동함을 알 수 있습니다.
      </p>
   <div align="center">
     <img src="image/ch1/1-17r.PNG" width="1200" height="200"/>
@@ -223,7 +223,7 @@
     <img src="image/ch1/1-18.PNG">
     <p><b>예제 1-18. JSON을 활용한 간단한 깊은 복사</b> </p>
   </div>
-     <p> 추가적으로 객체를 JSON 문법으로 표현된 문자열로 전환했다가 다시 JSON 객체로 바꾸는 방식을 이용하여 깊은 복사를 진행할 수 있습니다. 다만, 이 방법은 매서드나 숨겨전 프로퍼티인(__proto__) 또는 getter/setter 등 JSON으로 변경할 수 없는 프로퍼티들을 모두 무시합니다. 아래의 출력 결과를 보면 이를 확인할 수 있습니다.
+     <p> 추가적으로 객체를 JSON 문법으로 표현된 문자열로 전환했다가 다시 JSON 객체로 바꾸는 방식을 이용하여 깊은 복사를 진행할 수 있습니다. 다만, 이 방법은 메서드나 숨겨전 프로퍼티인(__proto__) 또는 getter/setter 등 JSON으로 변경할 수 없는 프로퍼티들을 모두 무시합니다. 아래의 출력 결과를 보면 이를 확인할 수 있습니다.
      </p>
   <div align="center">
     <img src="image/ch1/1-18r.PNG" width="1200" height="200"/>
@@ -263,7 +263,7 @@
     <img src="image/ch1/1-21.PNG">
     <p><b>예제 1-21. 빈 요소와 배열의 순회</b> </p>
   </div>
-     <p> 이 예제는 빈 요소가 있는 배열에 대해 어떻게 순회하는 지 확인 해봅니다. function(v,i)에서 v는 value를 의미하고, i는 index를 의미합니다. 이 때, arr1, arr2에 대해 각 매서드의 출력을 확인해보면 arr2의 0번째 value는 비어있기 때문에 순회 대상에서 제외된 것을 확인할 수 있습니다.
+     <p> 이 예제는 빈 요소가 있는 배열에 대해 어떻게 순회하는 지 확인 해봅니다. function(v,i)에서 v는 value를 의미하고, i는 index를 의미합니다. 이 때, arr1, arr2에 대해 각 메서드의 출력을 확인해보면 arr2의 0번째 value는 비어있기 때문에 순회 대상에서 제외된 것을 확인할 수 있습니다.
      </p>
   <div align="center">
     <img src="image/ch1/1-21r.PNG" width="450" height="180"/>
@@ -471,7 +471,7 @@
        * 2번째 줄: outer 실행 컨텍스트의 environmentRecord에 {inner} 식별자를 저장합니다. outerEnvironmentReference에는 outer 함수가 선언될 당시의 LexcialEnvironment, 즉 {Global, {a, outer} }에 담깁니다.<br>
        * 3번째 줄: outer 스코프에 있는 변수 inner에 f2를 할당합니다.<br>
        * 7번째 줄: inner 함수를 호출합니다. 이예 따라 outer 실행 컨텍스트는 7번째 줄에서 일시중단되고. inner 실행 컨텍스트가 활성화되오 3번째 줄로 이동합니다.<br>
-       * 3번째 즐: inner 실햅 컨텍스트의  environmentRecord에 {a} 식별자를 저장합니다. outerEnvironmentReference에는 inner 함수가 선언될 당시의 LexcialEnvironment, 즉 {outer, {inner} }에 담깁니다.<br>
+       * 3번째 줄: inner 실햅 컨텍스트의  environmentRecord에 {a} 식별자를 저장합니다. outerEnvironmentReference에는 inner 함수가 선언될 당시의 LexcialEnvironment, 즉 {outer, {inner} }에 담깁니다.<br>
        * 4번째 줄: 식별자 a에 접근하고자 합니다. 현재 활성화 상태인 inner 컨텍스트의 environmentRecord에서 a를 검색합니다. 여기에는 a가 발견되었지만 아직 할당된 값이 없습니다.(undefined 출력)<br>
        * 5번째 줄: inner 스코프에 있는 변수 a에 3을 할당합니다.
        * 6번째 줄: inner 함수 실행이 종료됩니다. inner 실행 컨텍스트가 콜 스택에서 제거되고, 바로 아래의 outer 실행 컨텍스트가 다시 활성화되면서, 앞서 중단했던 7번째의 다음 줄로 이동합니다.
@@ -516,7 +516,7 @@
     <img src="image/ch2/2-16.PNG">
     <p><b>예제 2-16.스코프 체인 확인(3) - 크롬 전용</b> </p>
   </div>
-     <p> console.dir 매서드를 이용하여 함수 내부에서 함수를 출력하는 대신 'debugger;'를 사용하여 확인하는 방법도 있습니다. 이 방법을 사용하면 더 정확한 정보를 확인할 수 있습니다.
+     <p> console.dir 메서드를 이용하여 함수 내부에서 함수를 출력하는 대신 'debugger;'를 사용하여 확인하는 방법도 있습니다. 이 방법을 사용하면 더 정확한 정보를 확인할 수 있습니다.
      </p>
  <div align="center">
     <img src="image/ch2/2-16r.PNG" width="600" height="350"/>
@@ -525,3 +525,404 @@
  
  ---
 ## Chapter 3
+- ### 3장 소개<br>
+   3장에서는 자바스크립트 내에서 this의 역할에 대해서 공부할 것입니다. 대부분의 객체지향 언어에서 this는 클래스를 생성한 인스턴스 객체를 의미합니다. 그러나 자바스크립트에서는 this를 어디서든 사용할 수 있으며, 상황에 따라 this가 바라보는 상황이 다릅니다. 자바스크립트에서 this는 기본적으로 실행 컨텍스트가 생성될 때 함께 결정됩니다. 다시 말해, <b>함수를 호출할 때 결정</b>됩니다. 함수와 객체(메서드)의 구분이 느슨한 자바스크립트에서는 this가 이를 구분할 수 있는 거의 유일한 수단이므로 이를 예제를 통해 학습해보겠습니다. 
+
+---
+- ### 예제 3-1<br>
+  <div align="center">
+    <img src="image/ch3/3-01.PNG">
+    <p><b>예제 3-1. 전역 공간에서의 this(브라우저 환경)</b> </p>
+  </div>
+     <p> 먼저, 기본적으로 전역객체는 <b>브라우저 환경에서 window</b>이고 <b>Node.js환경에서는 global</b>입니다. 전역 공간에서 this는 전역 객체를 가리킵니다. 이는 전역 컨텍스트를 생성하는 주체가 전역 객체이기 때문입니다. 따라서 위의 예제를 크롬 브라우저 환경에서 실행하면 아래와 같은 결과가 출력됩니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-01r.PNG" width="500" height="250"/>
+    <p><b>예제 3-1 - 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 3-2<br>
+  <div align="center">
+    <img src="image/ch3/3-02.PNG">
+    <p><b>예제 3-2. 전역 공간에서의 this(Node.js. 환경)</b> </p>
+  </div>
+     <p> 이는 Nodejs환경에서 실행하는 코드와 그 출력 결과입니다. 앞의 예제와 같은 동작을 함을 알 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-02r.PNG" width="800" height="200"/>
+    <p><b>예제 3-2 - 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 3-3<br>
+  <div align="center">
+    <img src="image/ch3/3-03.PNG">
+    <p><b>예제 3-3. 전역변수와 전역객체(1)</b> </p>
+  </div>
+     <p> 위 예제는 전역 공간에서 선언한 변수 a를 1로 할당하고 특성을 확인하기 위해 여러가지 출력을 확인하였습니다. <b>자바스크립트의 모든 변수는 실은 특정 객체의 프로퍼티에서 동작</b>하기 때문에 '전역 공간에서 선안한 변수 a를 1로 할당한 것'은 '전역객체의 프로퍼티 a를 1로 할당하였다'와 같은 의미인 것입니다. 따라서 'window.a', 'this.a'도 같은 출력 결과값이 나오게 됩니다
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-03r.PNG" width="700" height="200"/>
+    <p><b>예제 3-3 - 출력결과</b> </p>
+ </div>
+
+  ---
+- ### 예제 3-4<br>
+  <div align="center">
+    <img src="image/ch3/3-04.PNG">
+    <p><b>예제 3-4. 전역변수와 전역객체(2)</b> </p>
+  </div>
+     <p> '전역 공간에서 선안한 변수 a를 1로 할당'은 '전역객체의 프로퍼티 a를 1로 할당'와 같은 의미라는 것을 깨달았다면 변수를 선언할 때 'window.a', 'window.b'와 같이 변수를 선언하고 할당하는 것도 가능하다는 것을 알 수 있습니다. 따라서 이런 식으로 변수를 선언하고 할당하는 것은 같은 출력 결과를 얻을 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-04r.PNG" width="700" height="350"/>
+    <p><b>예제 3-4 - 출력결과</b> </p>
+ </div>
+
+   ---
+- ### 예제 3-5<br>
+  <div align="center">
+    <img src="image/ch3/3-05.PNG">
+    <p><b>예제 3-5. 전역변수와 전역객체(3)</b> </p>
+  </div>
+     <p> 하지만 두 개의 선언 방식은 완전히 일치하지 않습니다. 이 예제를 확인해보면 전역객체의 프로퍼티로 할당한 경우에는 변수가 삭제가 되는 반면 전역변수로 선언한 경우에는 변수가 삭제가 되지 않습니다. 이는 자바스크립트가 의도치 않게 변수를 삭제하는 것을 방지하기 위한 수단입니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-05r.PNG" width="700" height="350"/>
+    <p><b>예제 3-5 - 출력결과</b> </p>
+ </div>
+
+   ---
+- ### 예제 3-6<br>
+  <div align="center">
+    <img src="image/ch3/3-06.PNG">
+    <p><b>예제 3-6. 함수로서 호출, 메서드로서 호출</b> </p>
+  </div>
+     <p> 함수를 호출하는 일반적인 방법에는 2가지 경우가 있습니다. 하나는 함수로서 호출하는 경우이고 다른 하나는 메서드로서 호출하는 경우입니다. 자바스크립트에서는 객체의 메서드로서 호출하는 경우 메서드로 동작하며, 그렇지 않은 경우에 대해서는 함수로 호출하게 됩니다. 위의 예제를 4번째 줄에서는 func를 호출하였으니 함수로 호출한 케이스이지만, 9번째 줄에서 obj.method는 obj라는 객체의 메서드 method를 호출한 경우이니 이닌 메서드로 호출한 케이스입니다. 따라서 아래와 같은 출력 결과를 얻을 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-06r.PNG" width="700" height="200"/>
+    <p><b>예제 3-6 - 출력결과</b> </p>
+ </div>
+
+   ---
+- ### 예제 3-7<br>
+  <div align="center">
+    <img src="image/ch3/3-07.PNG">
+    <p><b>예제 3-7. 메서드로서 호출 - 점 표기법, 대괄호 표기법</b> </p>
+  </div>
+     <p> 지금까지의 객체의 메서드를 호출하였을 때 점 표기법을 사용하였짐나 위의 예제처럼 대괄호를 사용하여 메서드를 호출할 수 있습니다. 출력 결과를 보면 2가지 모두 같은 결과가 나오는 것을 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-07r.PNG" width="700" height="180"/>
+    <p><b>예제 3-7 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-8<br>
+  <div align="center">
+    <img src="image/ch3/3-08.PNG">
+    <p><b>예제 3-8. 메서드 내부에서의 this</b> </p>
+  </div>
+     <p> 이전 예제에서 말한 것처럼 자바스크립트에서 this는 <b>함수를 호출할 때 결정</b>된다고 하였습니다. 위 예제를 참고하면 이를 더 명확히 이해할 수 있습니다. 어떤 함수를 메서드로서 호출하는 경우 호출 주체는 <b>바로 함수명(프로퍼티명) 앞의 객체</b>입니다. 따라서 7,8번째 줄의 this는 obj를 가르키고 10~13번째 줄의 this는 obj.inner를 가르킵니다. 이는 출력 결과를 통해 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-08r.PNG" width="700" height="180"/>
+    <p><b>예제 3-8 - 출력결과</b> </p>
+ </div> 
+ 
+  ---
+- ### 예제 3-9<br>
+  <div align="center">
+    <img src="image/ch3/3-09.PNG">
+    <p><b>예제 3-9. 내부함수에서의 this</b> </p>
+  </div>
+     <p> 이는 내부함수의 경우에도 마찬가지입니다. 함수로서 호출하였는지 메서드로서 호출하였는지만 구분할 수 있다면 this가 무엇을 가르키는 지 알 수 있습니다. 먼저, 7번째 줄 innerFunc()은 함수로서 호출되었으니 this는 global을 가르키고, 12번째 줄 obj2.innerMethod()는 메서드로서 호출되었으며 this는 obj2를 가르킵니다. 마지막으로 15번쨔 줄 obj1.outer()는 메서드로서 호출되었으며 obj1을 가르킵니다. 따라서 아래와 같은 출력 결과가 나옵니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-09r.PNG" width="700" height="180"/>
+    <p><b>예제 3-9 - 출력결과</b> </p>
+ </div>   
+
+  ---
+- ### 예제 3-10<br>
+  <div align="center">
+    <img src="image/ch3/3-10.PNG">
+    <p><b>예제 3-10. 내부함수에서의 this를 우회하는 방법</b> </p>
+  </div>
+     <p> 위의 예제들을 통해 this가 무엇을 가르키는 지에 대해 이제 혼란을 없을 겁니다. 하지만 애초에 this는 호출 당시 주변 환경의 this를 그대로 상속받아 사용하는 경우가 일반적이기에 this를 사용하는 의미가 없어집니다. 따라서 this가 호출 당시 주변 환경의 this로 상속받을 수 있는 우회 방법이 위의 코드와 같습니다. 이렇게 되면 innerFunc2의 this는 함수가 호출 되었을 때의 환경, 즉 obj의 this를 그대로 상속받게 됩니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-10r.PNG" width="700" height="180"/>
+    <p><b>예제 3-10 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-11<br>
+  <div align="center">
+    <img src="image/ch3/3-11.PNG">
+    <p><b>예제 3-11. this를 바인딩하지 않는 함수</b> </p>
+  </div>
+     <p> 이제 추가적으로 해결해야할 문제가 <b>함수 내부에서 this가 전역객체를 바라보는 문제를 보완</b>하고자, <b>this를 바인딩하지 않은 화살표 함수(arrow function)를 사용</b>합니다. 이렇게 함수를 생성하면 this 바인딩 과정 자체가 빠지게 되어 상위 스코프의 this를 그대로 사용할 수 있게 됩니다. 이를 예제로 확인해보면, obj.outer()에서 this가 obj를 가르키기 때문에 3번째 줄 출력이 obj 객체가 나오게 됩니다. 그리고 4번째 줄에서 innerFunc 정의를 화살표 함수로 정의하였으므로 innerFunc()로 함수를 호출하게 되어도 this가 global을 가르키지 않고 상위 스코프의 this 즉, obj를 가르키게 됩니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-11r.PNG" width="700" height="180"/>
+    <p><b>예제 3-11 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-12<br>
+  <div align="center">
+    <img src="image/ch3/3-12.PNG">
+    <p><b>예제 3-12. 콜백 함수 내부에서의 this</b> </p>
+  </div>
+     <p> 먼저 <b>콜백 함수(call back)란, 함수를 다른 함수의 argument로 전달해줄 때 그 함수를 콜백 함수</b>라고 합니다. 콜백 함수에 대해서는 다음 장에서 자세히 다룰 예정이니 이렇게 간단하게만 보고 예제를 통해 콜백 함수 내부에서의 this는 어떻게 작동하는지 확인합니다. 콜백 함수는 기본적으로 함수이기 때문에 this가 전역 객체를 참고합니다. 그러나, 제어권을 받은 함수에서 콜백 함수에 별도로 this가 될 대상을 지정한 경우에는 그 대상을 참조하게 됩니다. 따라서 아래의 출력 결과를 보면 setTimeout 함수와 forEach 메서드는 그 내부에서 콜백 함수를 호출할 때 대상이 될 this를 지정하지 않습니다. 따라서 이 때 this는 전역객체를 참조합니다. 그러나 addEventListener 메서드는 자신의 this를 참조하도록 정의되어 있습니다. 이는 출력 결과로 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-12r.PNG">
+    <p><b>예제 3-12 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-13<br>
+  <div align="center">
+    <img src="image/ch3/3-13.PNG">
+    <p><b>예제 3-13. 생성자 함수</b> </p>
+  </div>
+     <p> 생성자에 대한 이야기는 추후에 자세하게 다룰 예정이니 간단하게 설명해보기 위해서는 클래스와 인스턴스를 알아야 합니다. 객체지향 언어에서는 생성자를 클래스, 클래스를 통해 만든 객체를 인스턴스라고 합니다. 예를 들어 설명하자면 인간의 특성들의 이야기해보면 직립보행, 뛰어난 두뇌, 언어사용 등이 있습니다. 이렇게 속성들을 모아 인간 집합을 정의한 것이 바로 클래스이며, 각 사람들은 인간 클래스에 속하는 인스턴스입니다. 이 때, 각 인스턴스들은 속성들이 다를 것이며, <b>'생성자'는 구체적인 인스턴스를 만들기 위한 일종의 틀</b>입니다. 자바스크립트는 함수에 생성자로서의 역할을 함께 부여하였는데 <b>new 명령와 함께 함수를 호출하면 해당 함수가 생성자로서 동작하게 됩니다.</b> 생성자 함수를 호출하면 우선 생성자의 prototype 프로퍼티를 참조하는 __proto__라는 프로퍼티가 있는 객체(인스턴스)를 만들고, 미리 준비된 공통 속성 및 개성을 해당 객체(this)에 부여합니다. 이를 예제로 확인해보고 출력 결과를 확인합니다. 
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-13r.PNG">
+    <p><b>예제 3-13 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-14<br>
+  <div align="center">
+    <img src="image/ch3/3-14.PNG">
+    <p><b>예제 3-14. call 메서드(1)</b> </p>
+  </div>
+     <p> <b>call 메서드는 호출 주체인 함수를 즉시 실행하도록 하는 명령</b>입니다. call 메서드의 첫 번째 인자를 this로 바인딩하고, 이후의 인자들을 호출할 함수의 매개변수로 합니다. 이렇게 하면 임의의 객체를 this로 지정할 수 있는 이점이 있습니다. 
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-14r.PNG">
+    <p><b>예제 3-14 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-15<br>
+  <div align="center">
+    <img src="image/ch3/3-15.PNG">
+    <p><b>예제 3-15. call 메서드(2)</b> </p>
+  </div>
+     <p> call 위 예제는 call 메세드의 this 바인딩을 확인하기 위한 예제입니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-15r.PNG">
+    <p><b>예제 3-15 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-16<br>
+  <div align="center">
+    <img src="image/ch3/3-16.PNG">
+    <p><b>예제 3-16. apply 메서드</b> </p>
+  </div>
+     <p> <b>apply 메서드는 call 메서드와 기능적으로는 완전히 동일합니다.</b> 둘의 차이점이라면 apply는 두 번째 인자를 배열로 받습니다. 따라서 그 배열의 요소들을 호출할 함수의 매개변수로 지정합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-16r.PNG">
+    <p><b>예제 3-16 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-17<br>
+  <div align="center">
+    <img src="image/ch3/3-17.PNG">
+    <p><b>예제 3-17. call/apply 메서드의 활용 1-1) 유사배열객체에 배열 메서드를 적용</b> </p>
+  </div>
+     <p> 객체에는 배열 메서드를 직접 적용할 수 없습니다. 따라서 유사배열객체를 사용합니다. <b>유사배열객체란, 키가 0또는 양의 정수인 프로퍼티가 존재하고 length 프로퍼티의 값이 0 또는 양의 정수인 객체, 즉 배열의 구조와 유사한 경우</b>입니다. 유사배열객체는 call, apply, push, slice 메서드를 차용가능하며 이를 활용한 예제입니다. 7번째 줄에서는 push 메서드를 이용하여 'd'를 추가하였고 11번째 줄에서는 slice 메서드를 이용하여 얕은 복사를 하였습니다.(원래 slice 메서드는 시작 인덱스값과 마지막 인덱스값을 받아 시작값부터 마지막값의 앞부분까지의 배열 요소를 추출하는 메서드인데, 매개변수를 아무것도 넘기지 않으면 얕은 복사본을 반환합니다.)
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-17r.PNG">
+    <p><b>예제 3-17 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-18<br>
+  <div align="center">
+    <img src="image/ch3/3-18.PNG">
+    <p><b>예제 3-18. call/apply 메서드의 활용 1-2) arguments, NodeList에 배열 메서드를 적용</b> </p>
+  </div>
+     <p> 함수 내부에서 접근할 수 있는 arguments 객체도 유사배열객체이므로 배열로 전환해서 활용할 수 있습니다. querySelectorAll, getElementByClassName 등도 마찬가지입니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-18r.PNG">
+    <p><b>예제 3-18 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-19<br>
+  <div align="center">
+    <img src="image/ch3/3-19.PNG">
+    <p><b>예제 3-19. call/apply 메서드의 활용 1-3) 문자열에 배열 메서드 적용 예시</b> </p>
+  </div>
+     <p> 단, 문자열의 경우 length 프로퍼티가 읽기 전용이기에 원본 문자열에 변경을 가하는 메서드에 대해서는 에러가 발생합니다. 
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-19r1.PNG">
+    <p><b>예제 3-19-1 - 출력결과(에러발생)</b> </p>
+    <img src="image/ch3/3-19r2.PNG">
+    <p><b>예제 3-19-1 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-20<br>
+  <div align="center">
+    <img src="image/ch3/3-20.PNG">
+    <p><b>예제 3-20. call/apply 메서드의 활용 1-4) ES6의 Array.from 메서드</b> </p>
+  </div>
+     <p> 이전 예제에서 slice 메서드를 사용하여 얕은 복사를 이용하는 대신 Array.from 메서드를 이용하여 배열을 복사할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-20r.PNG">
+    <p><b>예제 3-20 - 출력결과(에러발생)</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-21<br>
+  <div align="center">
+    <img src="image/ch3/3-21.PNG">
+    <p><b>예제 3-21. call/apply 메서드의 활용 2) 생성자 내부에서 다른 생성자를 호출</b> </p>
+  </div>
+     <p> call/apply 메서드를 활용하여 생성자 내부에서 다른 생성자와 공통된 내용이 있을 경우 달느 생성자를 호출하여 간단하게 반복을 줄일 수 있습니다.
+     </p>
+
+  ---
+- ### 예제 3-22<br>
+  <div align="center">
+    <img src="image/ch3/3-22.PNG">
+    <p><b>예제 3-22. call/apply 메서드의 활용 3-1) 최대/최솟값을 구하는 코드를 직접 구현</b> </p>
+  </div>
+     <p> call/apply 메서드를 이용하여 배열의 최댓값, 최솟값을 간단하게 구할 수 있습니다. 먼저 call/apply 메서드를 사용하지 않고 코드를 직접 구현본 예제입니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-22r.PNG">
+    <p><b>예제 3-22 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-23<br>
+  <div align="center">
+    <img src="image/ch3/3-23.PNG">
+    <p><b>예제 3-23. call/apply 메서드의 활용 3-2) 여러 인수를 받는 메서드(Math.max/Math.min)에 apply를 적용</b> </p>
+  </div>
+     <p> 바로 지정받아야할 객체를 없으므로 this를 지정하는 인자는 null로 설정하고 위와 같이 간단하게 구할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-23r.PNG">
+    <p><b>예제 3-23 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-24<br>
+  <div align="center">
+    <img src="image/ch3/3-24.PNG">
+    <p><b>예제 3-24. call/apply 메서드의 활용 3-3) ES6의 펼치기 연산자 활용</b> </p>
+  </div>
+     <p> 추가적으로 펼치기 연산자(spread operator)를 이용하면 더 간단하게 구현 가능합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-24r.PNG">
+    <p><b>예제 3-24 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-25<br>
+  <div align="center">
+    <img src="image/ch3/3-25.PNG">
+    <p><b>예제 3-25. bind 메서드 - this 지정과 부분 적용 함수 구현</b> </p>
+  </div>
+     <p> bind 메서드는 call과 비슷하지만 즉시 호출화지는 않고 넘겨 받은 this 및 인수들을 바탕으로 새로운 함수를 반환하기만 하는 매서드입니다. 다시 새로운 함수를 호출할 때 인수를 넘기면 그 인수들은 기존 bind 메서드를 호출할 때 전달했던 인수들의 뒤에 이어서 등록됩니다. 예제를 통해 이를 확인할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-25r.PNG">
+    <p><b>예제 3-25 - 출력결과</b> </p>
+ </div> 
+ 
+  ---
+- ### 예제 3-26<br>
+  <div align="center">
+    <img src="image/ch3/3-26.PNG">
+    <p><b>예제 3-26. bind 메서드 - name 프로퍼티</b> </p>
+  </div>
+     <p> bind 매서드를 사용하면 name 프로퍼티에 bound라는 접두어가 붙습니다. 어떤 함수의 new 프로퍼티가 'bound xxx'라면 이는 곧 함수명이 xxx인 원본 함수에 bind 메서드를 적용한 새로운 함수라는 의미가 되므로 코드를 추적하기 용이합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-26r.PNG">
+    <p><b>예제 3-26 - 출력결과</b> </p>
+ </div> 
+
+  ---
+- ### 예제 3-27<br>
+  <div align="center">
+    <img src="image/ch3/3-27-1.PNG">
+    <img src="image/ch3/3-27-2.PNG">
+    <p><b>예제 3-27. 내부함수에 this 전달 - call vs. bind</b> </p>
+  </div>
+     <p> 앞의 예제에서 this를 우회하는 방법으로 self 변수 등을 사용하는 방법을 소개하였었는데 apply, call, bind를 이용하여 더 간단하게 처리할 수 있습니다
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-27-1r.PNG">
+    <img src="image/ch3/3-27-2r.PNG">
+    <p><b>예제 3-27 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-28<br>
+  <div align="center">
+    <img src="image/ch3/3-28.PNG">
+    <p><b>예제 3-28. bind 메서드 - 내부함수에 this 전달</b> </p>
+  </div>
+     <p> 또한 콜백 함수를 인자로 받는 함수나 매서드 중에서 기본적으로 콜백 함수 내에서의 this에 관여하는 함수 또는 메서드에 대해서도 bind 메서드를 이용하여 this를 설정할 수 있습니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-28.PNG">
+    <p><b>예제 3-28 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-29<br>
+  <div align="center">
+    <img src="image/ch3/3-29.PNG">
+    <p><b>예제 3-29. 화살표 함수 내부에서의 this</b> </p>
+  </div>
+     <p> 앞의 예제에서 살펴봤듯이 화살표 함수는 실행 컨텍스트 생성 시 this를 바인딩하는 과정이 제외되었습니다. 하지만 이렇게 this는 상위 스코프를 가르키게 되어 별도로 this를 우회할 필요 없이 간결하게 사용 가능합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-29r.PNG">
+    <p><b>예제 3-29 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-30<br>
+  <div align="center">
+    <img src="image/ch3/3-30.PNG">
+    <p><b>예제 3-30. thisArg를 받는 경우 예시 - forEach 메서드</b> </p>
+  </div>
+     <p> 콜백 함수를 인자로 받는 메서드 중 일부는 추가로 this를 지정할 객체를 인자(thisarg)로 지정할 수 있는 경우가 있습니다. 이와 같은 경우 콜백 함수 내에서 this 값을 원하는 대로 변경할 수 있어 더 용이하게 사용가능합니다.
+     </p>
+ <div align="center">
+    <img src="image/ch3/3-30r.PNG">
+    <p><b>예제 3-30 - 출력결과</b> </p>
+ </div>  
+
+  ---
+- ### 예제 3-31<br>
+  <div align="center">
+    <img src="image/ch3/3-31.PNG">
+    <p><b>예제 3-31. 콜백 함수와 함께 thisArg를 인자로 받는 메서드</b> </p>
+  </div>
+     <p> 위의 코드들이 앞에서 설명한 this를 지정할 객체를 인자로 지정할 수 있는 경우들입니다.
+     </p>
