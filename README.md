@@ -974,12 +974,209 @@
     <img src="image/ch4/4-03.PNG">
     <p><b>예제 4-3. 콜백 함수 예제(2-1) Array.prototype.map</b> </p>
   </div>
-      우선 map 메서드는 아래와 같이 동작하게 됩니다.
-      <div>
-       Array.prototype.map(callback[, thisArg])
-       callback: functin(currentValue, index, array)
-      </div>
+  <p>
+   우선 map 메서드는 아래와 같은 구조로 동작하게 됩니다.<br>
+   <code>Array.prototype.map(callback[, thisArg])</code><br>
+   <code>callback: function(currentValue, index, array)</code>
+   map 메서드는 첫 번째 인자로 callback 함수를 받고, 생략 가능한 두 번째 인자로 콜백 함수 내부에서 this로 인식할 대상을 특정할 수 있습니다. thisArgs를 생략할 경우에는 일반적인 함수와 마찬가지로 전역 객체가 바인딩됩니다. 
+  </p>
  <div align="center">
     <img src="image/ch4/4-03r.PNG">
     <p><b>예제 4-3. 출력결과</b> </p>
  </div>
+
+ ---
+- ### 예제 4-4<br>
+  <div align="center">
+    <img src="image/ch4/4-04.PNG">
+    <p><b>예제 4-4. 콜백 함수 예제(2-2) Array.prototype.map - 인자의 순서를 임의로 바꾸어 사용한 경우</b> </p>
+  </div>
+  <p>
+   인자의 순서를 임의로 바꾸게 된다면 코드는 index를 currentValue값으로 착각하여 아래와 같은 출력 결과가 나오게 됩니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-04r.PNG">
+    <p><b>예제 4-4. 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 4-5<br>
+  <div align="center">
+    <img src="image/ch4/4-05.PNG">
+    <p><b>예제 4-5. 콜백 함수 예제(2-3) Array.prototype.map - 구현</b> </p>
+  </div>
+  <p>
+   위 예제는 this에는 thisArg 값이 있을 경우에는 그 값을, 없을 경우에는 전역객체를 지정합니다. 첫 번째 인자에는 메세드의 this가 배열을 가르킬 것이므로 배열의 i번째 요소 값을, 두 번째 인자에는 i값을, 세 번째 인자에는 배열 자체를 지정해 호출합니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-05r.PNG">
+    <p><b>예제 4-5. 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 4-6<br>
+  <div align="center">
+    <img src="image/ch4/4-06.PNG">
+    <p><b>예제 4-6. 콜백 함수 내부에서의 this</b> </p>
+  </div>
+  <p>
+   위 예제의 각각 콜백 함수 내에서의 this를 살펴보면, 처음 setTimeout은 내부에서 콜백 함수를 호출할 때 call 메서드의 첫 번째 인자에 전역 객체를 넘기기 때문에 this는 전역 객체를 가르킵니다. 두 번째 console.log(this)는 this에 별도로 인자를 받지 않아 전역 객체를 가르키게 됩니다. 마지막으로 console.log(this, e)는 call 메서드의 첫 번째 인자에 addEventListener 메서드의 this를 그대로 넘기므로 this는 HTML element를 가르키게 됩니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-06r.PNG">
+    <p><b>예제 4-6. 출력결과</b> </p>
+ </div>  
+
+ ---
+- ### 예제 4-7<br>
+  <div align="center">
+    <img src="image/ch4/4-07.PNG">
+    <p><b>예제 4-7. 메서드를 콜백 함수로 전달한 경우</b> </p>
+  </div>
+  <p>
+   7번째 줄에서 logValues 앞에 .(점)이 있으니 이는 메서드로서 호출되었습니다. 따라서 this는 obj를 가르킵니다. 그러나 8번째 줄에서는 이를 forEach 함수의 콜백 함수로서  전달하였습니다. 이 때 this를 지정하는 인자가 따로 정의되지 않았으므로 this는 전역 객체를 가르킵니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-07r.PNG">
+    <p><b>예제 4-7. 출력결과</b> </p>
+ </div>  
+
+ ---
+- ### 예제 4-8<br>
+  <div align="center">
+    <img src="image/ch4/4-08.PNG">
+    <p><b>예제 4-8. 콜백 함수 내부의 this에 따른 다른 값을 바인딩하는 방법(1) - 전통적인 방식</b> </p>
+  </div>
+  <p>
+   위의 예제를 통해 객체의 메서드를 콜백 함수로 전달하면 해당 객체를 this로 바라볼 수 없습니다. 이를 해결하기 위해 전통적으로는 this를 다른 변수에 담아 콜백 함수로 활용할 함수에서는 this 대신 그 변수를 사용하게 하고, 이를 클로저로 만드는 방식을 사용합니다. 따라서 위 예제를 보면 self 변수에 this를 담고, 익명 함수를 선언과 동시에 반환 하였습니다. 이에 따라 아래와 같은 출력을 확인할 수 있습니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-08r.PNG">
+    <p><b>예제 4-8. 출력결과</b> </p>
+ </div>    
+
+ ---
+- ### 예제 4-9<br>
+  <div align="center">
+    <img src="image/ch4/4-09.PNG">
+    <p><b>예제 4-9. 콜백 함수 내부에서 this를 사용하지 않은 경우</b> </p>
+  </div>
+  <p>
+   하지만 앞의 예제처럼 이렇게 this를 따로 변수를 설정하여 지정하는 것보다 this를 사용하지 않고 직접적으로 obj1을 사용하여 코드를 구성할 수도 있습니다. 
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-09r.PNG">
+    <p><b>예제 4-9. 출력결과</b> </p>
+ </div>     
+
+ ---
+- ### 예제 4-10<br>
+  <div align="center">
+    <img src="image/ch4/4-10.PNG">
+    <p><b>예제 4-10. 예제 4-8의 func 함수 재활용</b> </p>
+  </div>
+  <p>
+   앞의 예제를 활용하여 다양한 상황에서 원하는 객체를 바라보는 콜백 함수를 만들 수 있습니다. 다만 이는 처음부터 바라볼 객체를 명시적으로 지정하여서 불편함이 있습니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-10r.PNG">
+    <p><b>예제 4-10. 출력결과</b> </p>
+ </div>
+
+ ---
+- ### 예제 4-11<br>
+  <div align="center">
+    <img src="image/ch4/4-11.PNG">
+    <p><b>예제 4-11. 콜백 함수 내부의 this에 다른 값을 바인딩하는 방법(2) - bind 메서드 활용</b> </p>
+  </div>
+  <p>
+   이는 bind 메서드를 이용하여 해결할 수 있습니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-11r.PNG">
+    <p><b>예제 4-11. 출력결과</b> </p>
+ </div>      
+
+ ---
+- ### 예제 4-12<br>
+  <div align="center">
+    <img src="image/ch4/4-12.PNG">
+    <p><b>예제 4-12. 콜백 지옥 예시 (1-1)</b> </p>
+  </div>
+  <p>
+   콜백 지옥(callback hell)은 콜백 함수를 익명 함수로 전달하는 과정이 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상을 말합니다. 이는 비동기적인 코드의 비중이 늘어남에 따라 발생한 문제입니다. 콜백 지옥 예시는 아래와 같습니다. 위 예제는 0.5초 주기마다 커피 목록을 수집하고 출력하는 예제입니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-12r.PNG">
+    <p><b>예제 4-12. 출력결과</b> </p>
+ </div>   
+
+ ---
+- ### 예제 4-13<br>
+  <div align="center">
+    <img src="image/ch4/4-13.PNG">
+    <p><b>예제 4-13. 콜백 지옥 해결 - 기명함수로 변환)</b> </p>
+  </div>
+  <p>
+   첫 번째 해결법은 익명의 콜백 함수를 모두 기명함수로 전환하는 방법입니다. 위 방식은 코드의 가독성을 높입니다. 또한 변수를 최상단으로 끌어올림으로써 외부에 노출되게 됐지만 전체를 즉시 실행 함수 등으로 감싸면 간단히 해결할 수 있습니다. 다만, 이는 일회성 함수를 전부 변수에 할당하는 귀찮음이 존재하므로 비동기적인 일련의 작업을 동기적으로, 혹은 동기적인 것처럼 보이게끔 처리해주는 방식으로 새로운 해결법들이 제시되고 있습니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-13r.PNG">
+    <p><b>예제 4-13. 출력결과</b> </p>
+ </div>  
+
+ ---
+- ### 예제 4-14<br>
+  <div align="center">
+    <img src="image/ch4/4-14.PNG">
+    <p><b>예제 4-14. 비동기 작업의 동기적 표현(1) - Promise(1)</b> </p>
+  </div>
+  <p>
+   첫 번째 해결법은 ES6의 Promise를 이용한 방식입니다. new 연산자와 함께 호출한 Promise의 인자를 넘겨주는 콜백 함수는 호출할 때 바로 실행되지만 그 내부에 있는 resolve 또는 reject 함수를 호출하는 구문이 있을 경우 둘 중 하나가 실행되기 전까지는 다음(then) 또는 오류 구문(catch)으로 넘어가지 않습니다. 따라서 비동기 작업이 완료될 때까지 비로소 resolve 또는 reject를 호출하는 방법으로 비동기 작업의 동기적 표현이 가능합니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-14r.PNG">
+    <p><b>예제 4-14. 출력결과</b> </p>
+ </div>    
+
+ ---
+- ### 예제 4-15<br>
+  <div align="center">
+    <img src="image/ch4/4-15.PNG">
+    <p><b>예제 4-15. 비동기 작업의 동기적 표현(2) - Promise(2)</b> </p>
+  </div>
+  <p>
+   반복적인 내용을 함수화하여 더 짧게 표현한 것입니다. 2번째 및 3번째 줄에서 클로저가 등장하였는데, 이는 다음 장에서 다룰 예정입니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-15r.PNG">
+    <p><b>예제 4-15. 출력결과</b> </p>
+ </div>     
+
+ ---
+- ### 예제 4-16<br>
+  <div align="center">
+    <img src="image/ch4/4-16.PNG">
+    <p><b>예제 4-16. 비동기 작업의 동기적 표현(3) - Generator</b> </p>
+  </div>
+  <p>
+   두 번째 해결법은 ES6의 Generator를 이용하는 것입니다. 6번째 줄의 '*'이 붙은 함수가 Generator 함수입니다. Generator 함수를 실행하면 Iterator가 반환되고, Iterator는 next라는 메서드를 가지고 있습니다. next 메서드를 호출하면 Generator 함수 내부에서 가장 먼저 등장하는 yield에서 함수의 실행을 멈춥니다. 이후 다시 next 메서드를 호출하면 앞서 멈췄던 부분부터 시작해서 그 다음에 등장하는 yield에서 함수의 실행을 멈춥니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-16r.PNG">
+    <p><b>예제 4-16. 출력결과</b> </p>
+ </div>      
+
+ ---
+- ### 예제 4-17<br>
+  <div align="center">
+    <img src="image/ch4/4-17.PNG">
+    <p><b>예제 4-17. 비동기 작업의 동기적 표현(4) - Promise + Async+await</b> </p>
+  </div>
+  <p>
+   세 번째 해결법은 ES2017의 async/await입니다. 비동기 작업을 수행하고자 하는 함수 앞에 async를 표기하고, 함수 내부에서 실질적인 비동기 작업이 필요한 위치마다 await를 표기하는 것만으로 뒤의 내용을 Promise로 자동 전환하고, 해당 내용이 resolve된 이후에야 다음으로 진행합니다. 즉 Promise의 then과 흡사한 효과를 얻을 수 있습니다.
+  </p>
+ <div align="center">
+    <img src="image/ch4/4-17r.PNG">
+    <p><b>예제 4-17. 출력결과</b> </p>
+ </div>    
