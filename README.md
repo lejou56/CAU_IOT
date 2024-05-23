@@ -1176,7 +1176,248 @@
   <p>
    세 번째 해결법은 ES2017의 async/await입니다. 비동기 작업을 수행하고자 하는 함수 앞에 async를 표기하고, 함수 내부에서 실질적인 비동기 작업이 필요한 위치마다 await를 표기하는 것만으로 뒤의 내용을 Promise로 자동 전환하고, 해당 내용이 resolve된 이후에야 다음으로 진행합니다. 즉 Promise의 then과 흡사한 효과를 얻을 수 있습니다.
   </p>
+
+---
+## Chapter 5<br>
+- ### 5장 소개<br>
+   클로저에 대한 정의는 한 줄로 표현하기에는 쉽지 않습니다. 간략하게 말하면, 어떤 함수에서 선언한 변수를 참조하는 내부함수에서만 발생하는 현상입니다. 이렇게 설명하면 이해하기 힘드므로 다양한 예제를 통해 설명해보겠습니다.
+  
+---
+- ### 예제 5-1<br>
+  <div align="center">
+    <img src="image/ch5/5-01.PNG">
+    <p><b>예제 5-1. 외부 함수의 변수를 참조하는 내부 함수(1)</b> </p>
+  </div>
+     <p> 위 예제에서는 outer 함수에서 a를 선언하였고, outer의 내부함수인 inner 함수에서 a의 값을 1만큼 증가시킨 다음 출력합니다. 이 때 inner 함수 내부에서는 a를 선언하지 않았기 때문에 outerEnvironmentReference에 지정된 상위 컨텍스트인 outer의 LexicalEnvironment에 접근해서 다시 a를 찾습니다. 그리고 outer 함수의 실행 컨텍스트가 종료되면 LexicalEnvironment에 저장된 식별자들 a와 inner에 대한 참조를 지웁니다.
+     </p>  
  <div align="center">
-    <img src="image/ch4/4-17r.PNG">
-    <p><b>예제 4-17. 출력결과</b> </p>
+    <img src="image/ch5/5-01r.PNG">
+    <p><b>예제 5-01. 출력결과</b> </p>
  </div>    
+
+---
+- ### 예제 5-2<br>
+  <div align="center">
+    <img src="image/ch5/5-02.PNG">
+    <p><b>예제 5-2. 외부 함수의 변수를 참조하는 내부 함수(2)</b> </p>
+  </div>
+     <p> 이번 예제도 마찬가지입니다. inner 외부에서 inner 함수를 실행한 결과를 리턴합니다. 이 역시 outer 함수의 실행 컨텍스트가 종료된 시점에는 a 변수를 참조하는 대상이 없어지고 inner 함수를 호출할 수 없다는 공통점이 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-02r.PNG">
+    <p><b>예제 5-02. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 5-3<br>
+  <div align="center">
+    <img src="image/ch5/5-03.PNG">
+    <p><b>예제 5-3. 외부 함수의 변수를 참조하는 내부 함수(3)</b> </p>
+  </div>
+     <p> 이번 예제 또한 비슷합니다. outer 함수의 실행 컨텍스트가 종료될 때(8번째 줄) outer2 변수는 outer의 실행 결과인 inner 함수를 참조하게 될 것입니다. 그런데 앞선 예제도 그렇고 inner 함수의 실행 시점에는 outer 함수는 이미 종료된 상태인데 outer 함수의 LexicalEnvironment에 접근하고 있습니다. 이는 가비지 컬렉터의 동작 방식 때문에 가능한 일입니다. 가비지 컬렉터는 어떤 값을 참조하는 변수가 하나라도 있다면 그 값은 수집 대상에 포함시키지 않습니다. 이 특성 덕에 inner 함수 참조가 가능한 것입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-03r.PNG">
+    <p><b>예제 5-03. 출력결과</b> </p>
+ </div>  
+
+---
+- ### 예제 5-4<br>
+  <div align="center">
+    <img src="image/ch5/5-04-1.PNG">
+    <img src="image/ch5/5-04-2.PNG">
+    <p><b>예제 5-4. return 없이도 클로저가 발생하는 다양한 경우</b> </p>
+  </div>
+     <p> (1)은 setInterval에 전달할 콜백 함수 내부에서 지역변수를 참조하고 (2)은 addEventListener에 등록할 handler 함수 내부에서 지역변수를 참조합니다. 두 상황 모두 지역변수를 참조하는 내부함수를 외부에 전달했기 때문에 클로저입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-04-1r.PNG">
+    <img src="image/ch5/5-04-2r.PNG">
+    <p><b>예제 5-04. 출력결과</b> </p>
+ </div>   
+ 
+---
+- ### 예제 5-5<br>
+  <div align="center">
+    <img src="image/ch5/5-05-1.PNG">
+    <img src="image/ch5/5-05-2.PNG">
+    <img src="image/ch5/5-05-3.PNG">
+    <p><b>예제 5-5. 클로저의 메모리 관리</b> </p>
+  </div>
+     <p> 다만, 이러한 클로저는 메모리 누수의 문제를 안고 있습니다. 가비지 컬렉터로 들어가야할 변수들이 클로저로 인해 메모리에 남아있으므로 메모리 관리법에 대해 알아야합니다. 이를 해결하는 법은 상당히 간단합니다. 참조 카운트를 0으로 만드는 것입니다. 즉, 식별자에 참조형이 아닌 기본형 데이터(보통 null이나 undefined)를 할당하면 됩니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-05-1r.PNG">
+    <img src="image/ch5/5-05-2r.PNG">
+    <img src="image/ch5/5-05-3r.PNG"> 
+    <p><b>예제 5-05. 출력결과</b> </p>
+ </div>   
+
+---
+- ### 예제 5-6<br>
+  <div align="center">
+    <img src="image/ch5/5-06.PNG">
+    <p><b>예제 5-6. 콜백 함수와 클로저(1)</b> </p>
+  </div>
+     <p> 4번째 줄의 forEach는 외부 변수를 사용하지 않으므로 클로저가 없지만 7번째 줄의 addEventListener에 겨준 콜백 함수에는 fruit라는 외부 변수를 참조하고 있으므로 클로저가 있습니다. 하지만 이 함수의 쓰임새가 콜백 함수에 국한되지 않는 경우라면 반복을 줄이기 위해 외부로 분리하는 편이 좋습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-06r.PNG">
+    <p><b>예제 5-06. 출력결과</b> </p>
+ </div>   
+
+---
+- ### 예제 5-7<br>
+  <div align="center">
+    <img src="image/ch5/5-07.PNG">
+    <p><b>예제 5-7. 콜백 함수와 클로저(2)</b> </p>
+  </div>
+     <p> 앞의 예제의 단점을 보완한 것이 이번 예제입니다. 다만 콜백 함수의 인자에 대한 제어권을 addEventListener가 가진 상태이며, addEventListener는 콜백 함수를 호출할 때 첫 번째 인자에 '이벤트 객체'를 주입하기에 각 li를 클릭하면 클릭한 대상의 과일명이 아닌[object MouseEvent]라는 값이 출력됩니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-07r.PNG">
+    <p><b>예제 5-07. 출력결과</b> </p>
+ </div>    
+
+---
+- ### 예제 5-8<br>
+  <div align="center">
+    <img src="image/ch5/5-08.PNG">
+    <p><b>예제 5-8. 콜백 함수와 클로저(3)</b> </p>
+  </div>
+     <p> 앞의 문제는 bind 메서드를 이용하여 해결할 수 있습니다. 그러나 이렇게 하면 이벤트 객체가 인자로 넘어오는 순서가 바뀌는 점 및 함수 내부에서의 this가 원래의 그것과 달라지는 점을 감안해야 합니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-08r.PNG">
+    <p><b>예제 5-08. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 5-9<br>
+  <div align="center">
+    <img src="image/ch5/5-09.PNG">
+    <p><b>예제 5-9. 콜백 함수와 클로저(4)</b> </p>
+  </div>
+     <p> 4번째 줄에서 alertFruit 함수 대신 alertFruitBuilder라는 이름의 함수를 작성하는 방식으로 해결할 수 있습니다. 이 함수의 내부함수가 기존의 alertFruit함수가 되며 12번째 줄에서 alertFruitBuilder 함수를 실행하면서 fruit 값을 인자로 전달하였습니다. 이는 반환된 함수를 리스너에 콜백 함수로써 전달한 것이며, alertFruitBuilder의 실행결과로 반환된 함수 클로저가 존재하게 됩니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-09r.PNG">
+    <p><b>예제 5-09. 출력결과</b> </p>
+ </div>      
+
+---
+- ### 예제 5-10<br>
+  <div align="center">
+    <img src="image/ch5/5-10.PNG">
+    <p><b>예제 5-10. 간단한 자동차 객체</b> </p>
+  </div>
+     <p> 정보 은닉(information hiding)은 어떤 모듈의 내부 로직에 대해 외부로의 노출을 최소화해서 모듈간의 결합도를 낮추고 유연성을 높이고자 하는 것입니다. 흔히, 접근 권한에는 public, private, protected 이렇게 세 종류가 존재합니다. 이를 이용하여 간단한 자동차 게임을 설계하였습니다. fuel과 power는 무작위로 생성하고, moved라는 프로퍼티에 총 이동거리를 부여하였습니다. 이렇게 사람 수 만큼 car 객체를 생성하여 각자의 턴에 run을 실행하여 이동 거리를 경쟁하는 코드입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-10r.PNG">
+    <p><b>예제 5-10. 출력결과</b> </p>
+ </div>  
+
+---
+- ### 예제 5-11<br>
+  <div align="center">
+    <img src="image/ch5/5-11.PNG">
+    <p><b>예제 5-11. 클로저로 변수를 보호한 자동차 객체(1)</b> </p>
+  </div>
+     <p> 다만 이는, car 프로퍼티를 강제로 변환하여 게임을 일방적으로 조작할 수 있습니다. 따라서 위 예제에서는 fuel, power 변수를 비공개 멤버로 지정해 외부에서 접근을 제한하였고, moved 변수는 getter만을 부여함으로써 읽기 전용 속성을 부여하였습니다. 따라서 아래와 같이 변수의 값을 변화하려는 시도는 다 실패하게 됩니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-11r.PNG">
+    <p><b>예제 5-11. 출력결과</b> </p>
+ </div>   
+
+---
+- ### 예제 5-12<br>
+  <div align="center">
+    <img src="image/ch5/5-12.PNG">
+    <p><b>예제 5-12. 클로저로 변수를 보호한 자동차 객체(2)</b> </p>
+  </div>
+     <p> 하지만 앞의 예제도 run 메서드를 다른 내용으로 덮어버릴 수 있기 때문에 완전하게 안전한 코드는 아닙니다. 따라서 위와 같이 코드를 수정하면 충분히 안전한 객체가 되었습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-12r.PNG">
+    <p><b>예제 5-12. 출력결과</b> </p>
+ </div>         
+
+---
+- ### 예제 5-13<br>
+  <div align="center">
+    <img src="image/ch5/5-13.PNG">
+    <p><b>예제 5-13. bind 메서드를 활용한 부분 적용 함수</b> </p>
+  </div>
+     <p> 부분 적용 함수(partially applied function)란 n개의 인자를 받는 함수에 미리 m개의 인자만 넘겨 기억시켰다가, 나중에 (n-m)개의 인자를 넘기면 비로소 원래 함수의 실행 결과를 얻을 수 있게끔 하는 함수입니다. 이는 bind 메서드로 구현할 수 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-13r.PNG">
+    <p><b>예제 5-13. 출력결과</b> </p>
+ </div>    
+
+---
+- ### 예제 5-14<br>
+  <div align="center">
+    <img src="image/ch5/5-14.PNG">
+    <p><b>예제 5-14. 부분 적용 함수 구현(1)</b> </p>
+  </div>
+     <p> 다만 앞의 예제는 this를 사용하게 되면 문제가 발생하게 됩니다. 하지만 this 값을 변경할 수 밖에 없기 때문에 메서드에서는 사용할 수 없습니다. 따라서 this에 관여하지 않는 별도의 부분 적용 함수를 만든 것이 위 예제입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-14r.PNG">
+    <p><b>예제 5-14. 출력결과</b> </p>
+ </div>  
+
+---
+- ### 예제 5-15<br>
+  <div align="center">
+    <img src="image/ch5/5-15.PNG">
+    <p><b>예제 5-15. 부분 적용 함수 구현(2)</b> </p>
+  </div>
+     <p> 앞의 예제에서 기능을 추가한 것이 위의 예제입니다. 위 예제는 인자들을 원하는 위치에 미리 넣어놓고 나중에 빈 자리에 인자를 채워넣어 실행한 코드입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-15r.PNG">
+    <p><b>예제 5-15. 출력결과</b> </p>
+ </div>      
+
+---
+- ### 예제 5-16<br>
+  <div align="center">
+    <img src="image/ch5/5-16.PNG">
+    <p><b>예제 5-16. 부분 적용 함수 - 디바운스</b> </p>
+  </div>
+     <p> 디바운스(debounce)란, 짧은 시간 동안 동일한 이벤트가 많이 발생할 경우 이를 전부 처리하지 않고 처음 도는 마지막에 발생한 이벤트에 대해 한 번만 처리하는 것입니다. 이는 프런트엔드 성능 최적화에 도움을 줍니다. 위의 예제는 디바운스를 활용한 코드입니다. 이는 4번째 줄에서 this를 별도의 변수에 담고, 6번째 줄에서 무조건을 대기큐를 초기화하였습니다. 마지막 7번째 줄에서 setTimeout으로 wait 시간만큼 지연시킨 다음, 원래의 func을 호출하는 형태입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-16r.PNG">
+    <p><b>예제 5-16. 출력결과</b> </p>
+ </div>    
+
+---
+- ### 예제 5-17<br>
+  <div align="center">
+    <img src="image/ch5/5-17.PNG">
+    <p><b>예제 5-17. 커링 함수(1)</b> </p>
+  </div>
+     <p> 커링 함수(currying function)이란 여러 개의 인자를 받는 함수를 하나의 인자만 받는 함수로 나눠서 순차적으로 호출될 수 있게 체인 형태로 구성한 것을 말합니다. 커링은 한 번에 하나의 인자만 전달하는 것을 원칙으로 합니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-17r.PNG">
+    <p><b>예제 5-17. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 5-18<br>
+  <div align="center">
+    <img src="image/ch5/5-18.PNG">
+    <p><b>예제 5-18. 커링 함수(2)</b> </p>
+  </div>
+     <p> 단, 위의 예제처럼 인자가 많아질수록 가독성이 떨어진다는 단점이 있습니다. 
+     </p>  
+ <div align="center">
+    <img src="image/ch5/5-18r.PNG">
+    <p><b>예제 5-18. 출력결과</b> </p>
+ </div>      
