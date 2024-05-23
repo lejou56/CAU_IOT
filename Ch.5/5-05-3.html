@@ -1,0 +1,27 @@
+<!-- 연결프로그램을 Chrome으로 열고 Ctrl + Shift + i 눌러서 콘솔 확인 -->
+<html>
+    <head>
+        <title>CAU_IOT</title>
+    </head>
+    <body>
+        <h1>Website for Code test 5-05.js in Chrome Brower Environment</h1>
+        <p>2024120378 이한빈</p>
+        <script>
+        (function () {
+            var count = 0;
+            var button = document.createElement('button');
+            button.innerText = 'click';
+
+            var clickHandler = function () {
+                console.log(++count, 'times clicked');
+                if (count >= 10) {
+                    button.removeEventListener('click', clickHandler);
+                    clickHandler = null;
+                }
+            };
+            button.addEventListener('click', clickHandler);
+            document.body.appendChild(button);
+        })();
+        </script> 
+    </body>
+</html>
