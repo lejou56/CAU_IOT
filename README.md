@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=Rounded&color=f4faa2&height=200&section=header&text=CAU%20IOT&desc=2024120378%20이한빈&descAlignY=80&fontSize=80">
+![image](https://github.com/lejou56/CAU_IOT/assets/168162947/a1e2a64c-7d60-44a7-b670-50fddeb1f86b)<img src="https://capsule-render.vercel.app/api?type=Rounded&color=f4faa2&height=200&section=header&text=CAU%20IOT&desc=2024120378%20이한빈&descAlignY=80&fontSize=80">
 
 # 1. Introduction
 
@@ -33,7 +33,11 @@
 - ## [Chapter 5: 클로저](#chapter5)
   * ### [소개](#5장-소개)<br>
   * ### [예제 5-1 ~ 4.9](#예제-5-1) <br>
-  * ### [예제 5-10 ~ 5.18](#예제-5-10) <br>  
+  * ### [예제 5-10 ~ 5.18](#예제-5-10) <br>
+
+- ## [Chapter 6: 프로토타입](#chapter5)
+  * ### [소개](#6장-소개)<br>
+  * ### [예제 6-1 ~ 6.10](#예제-6-1) <br>
 
 # 3. Main
 
@@ -1420,4 +1424,133 @@
  <div align="center">
     <img src="image/ch5/5-18r.PNG">
     <p><b>예제 5-18. 출력결과</b> </p>
+ </div>      
+
+
+---
+## Chapter 6<br>
+- ### 6장 소개<br>
+   C, C++ 언어에서는 '상속'을 사용하지만 자바스크립트와 같은 프로토타입 기반의 언어는 어떤 객체를 원형으로 삼고 이를 참조함으로써 상속과 비슷한 효과를 얻습니다. 이는 기존의 언어에 익숙한 사람에게는 어려울 수 있지만 알고 나면 매우 쉬운 개념입니다. 이 6장에서는 프로토타입이라는 개념에 대해 다룹니다.
+  
+---
+- ### 예제 6-1<br>
+  <div align="center">
+    <img src="image/ch6/6-01.PNG">
+    <p><b>예제 6-1. Person.prototype</b> </p>
+  </div>
+     <p> 위의 예제에서는 Person이라는 생성자 함수의 prototype에 getName이라는 메서드를 지정하였습니다. 이렇게 되면 Person의 인스턴스는 __proto__프로퍼티를 통해 getNmae을 호출할 수 있습니다.
+     </p>  
+
+---
+- ### 예제 6-2<br>
+  <div align="center">
+    <img src="image/ch6/6-02.PNG">
+    <p><b>예제 6-2. prototype과 __proto__</b> </p>
+  </div>
+     <p> 먼저, Constructor라는 생성자를 만들고 prototype의 메서드를 조정해보고 이의 디렉터리 구조를 출력해보고 instance라는 Constructor의 인스턴스를 만들어 이의 디렉터리 구조를 출력해보았습니다. 그 결과 VScode 콘솔창에는 함수의 이름 정도가 표기되지만 Chrome의 개발자 도구 콘솔에서 결과를 확인해본다면, instance의 prototype은 Constuctor의 prototype과 동일합니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-02r.PNG">
+    <p><b>예제 6-02. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 6-3<br>
+  <div align="center">
+    <img src="image/ch6/6-03.PNG">
+    <p><b>예제 6-3. constructor 프로퍼티</b> </p>
+  </div>
+     <p> 생성자 함수의 프로퍼티인 prototype 객체 내부에는 constructor라는 프로퍼티가 있으며 이는 인스턴스의 __proto__ 객체 내부에도 마찬가지입니다. 이를 이용하여 인스턴스에서 직접 constructor에 접근하여 값을 부여할 수 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-03r.PNG">
+    <p><b>예제 6-03. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 6-4<br>
+  <div align="center">
+    <img src="image/ch6/6-04.PNG">
+    <p><b>예제 6-4. constructor 변경</b> </p>
+  </div>
+     <p> constructor는 기본형 리터럴 변수 number, string boolean을 제외하고 값을 바꿀 수 있습니다. 위 예제를 보면 이를 확인할 수 있으며, constructor를 변경하더라도 참조하는 대상이 변경될 뿐 만들어진 인스턴스의 원형이 바뀐다거나 데이터 타입이 변하는 것은 아닙니다. 이 또한 false가 출력되는 것을 확인할 수 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-04r.PNG">
+    <p><b>예제 6-04. 출력결과</b> </p>
+ </div>    
+
+---
+- ### 예제 6-5<br>
+  <div align="center">
+    <img src="image/ch6/6-05.PNG">
+    <p><b>예제 6-5. 다양한 constructor 접근 방법</b> </p>
+  </div>
+     <p> 이 예제도 앞의 예제와 비슷합니다. p1~p5까지 모두 Person의 인스턴스입니다. 따라서 모두 동일한 대상을 가리키며 모두 동일한 객체(prototype)에 접근할 수 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-05r.PNG">
+    <p><b>예제 6-05. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 6-6<br>
+  <div align="center">
+    <img src="image/ch6/6-06.PNG">
+    <p><b>예제 6-6. 메서드 오버라이드</b> </p>
+  </div>
+     <p> 이번 예제에서는 메서드 오버라이드에 대해 알아봅니다. 인스턴스가 동일한 이름의 프로퍼티 또는 메서드를 가지고 있을 때 그 메서드를 호출하게 되면 메서드 오버라이드가 발생합니다. 위의 예제를 보면 iu.__proto__.getName을 호출하고 싶었지만 iu 객체에 있는 getName 메서드가 호출되었습니다. 이는 call 이나 apply 메서드를 이용하여 해결할 수 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-06r.PNG">
+    <p><b>예제 6-06. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 6-7<br>
+  <div align="center">
+    <img src="image/ch6/6-07.PNG">
+    <p><b>예제 6-7. 배열에서 배열 메서드 및 객체 메서드 실행</b> </p>
+  </div>
+     <p> 위의 예제는 arr 배열의 __proto__에 접근하여 3이라는 요소를 추가하고 Array.prototype 내부의 메서드를 마치 자신의 것처럼 실행하는 예제이다. 이는 뒤의 예제를 통해 자세히 알아볼 수 있다.
+     </p>  
+
+---
+- ### 예제 6-8<br>
+  <div align="center">
+    <img src="image/ch6/6-08.PNG">
+    <p><b>예제 6-8. 메서드 오버라이드와 프로토타입 체이닝</b> </p>
+  </div>
+     <p> arr 변수는 배열이므로 arr.__proto__는 Array.prototype을 참조하고, Array.prototype은 객체이므로 Array.prototype.__proto__는 Object.prototype을 참조할 것입니다. 이 때, toString이라는 메서드는 Array.prototype뿐 아니라 Object.prototype에도 있습니다. 출력을 확인해 봤을 때 자바스크립트 데이터는 프로토타입 체인 구조를 가지는 것을 확인할 수 있습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-08r.PNG">
+    <p><b>예제 6-08. 출력결과</b> </p>
+ </div>     
+
+
+---
+- ### 예제 6-9<br>
+  <div align="center">
+    <img src="image/ch6/6-09.PNG">
+    <p><b>예제 6-9. Object.prototype에 추가한 메서드에의 접근</b> </p>
+  </div>
+     <p> prototype은 반드시 객체이기 때문에 Object.prototype이 언제나 프로토타입 체인의 최상단에 존재하게 됩니다. getEntries라는 메서드는 객체에서만 사용할 의도로 정의되었으나 모든 데이터가 오류 없이 결과를 반환하고 있씁니다. 이는 프로토타입 체이닝을 통해 발생하는 결과입니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-09r.PNG">
+    <p><b>예제 6-09. 출력결과</b> </p>
+ </div>      
+
+---
+- ### 예제 6-10<br>
+  <div align="center">
+    <img src="image/ch6/6-09.PNG">
+    <p><b>예제 6-10. Grade 생성자 함수와 인스턴스</b> </p>
+  </div>
+     <p> 변수 g는 Grade의 인스턴스를 바라봅니다. Grade는 여러 가지 인자를 받는 유사배열객체이며 g 인스턴스는 프로토타입 체인에 따라 g 객체 자신이 지니는 멤버, Grade의 prototype에 있는 멤버, Array.prototype에 있는 멤버, 끝으로 Object.prototype에 있는 멤버에까지 접근할 수 있게 됐습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch6/6-10r.PNG">
+    <p><b>예제 6-10. 출력결과</b> </p>
  </div>      
