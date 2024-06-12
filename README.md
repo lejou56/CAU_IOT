@@ -1,4 +1,4 @@
-![image](https://github.com/lejou56/CAU_IOT/assets/168162947/a1e2a64c-7d60-44a7-b670-50fddeb1f86b)<img src="https://capsule-render.vercel.app/api?type=Rounded&color=f4faa2&height=200&section=header&text=CAU%20IOT&desc=2024120378%20이한빈&descAlignY=80&fontSize=80">
+
 
 # 1. Introduction
 
