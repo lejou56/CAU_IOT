@@ -35,9 +35,14 @@
   * ### [예제 5-1 ~ 4.9](#예제-5-1) <br>
   * ### [예제 5-10 ~ 5.18](#예제-5-10) <br>
 
-- ## [Chapter 6: 프로토타입](#chapter5)
+- ## [Chapter 6: 프로토타입](#chapter6)
   * ### [소개](#6장-소개)<br>
   * ### [예제 6-1 ~ 6.10](#예제-6-1) <br>
+
+- ## [Chapter 7: 클래스](#chapter7)
+  * ### [소개](#7장-소개)<br>
+  * ### [예제 7-1 ~ 7.09](#예제-7-1) <br>
+  * ### [예제 7-10 ~ 7.16](#예제-7-1) <br>
 
 # 3. Main
 
@@ -1553,4 +1558,185 @@
  <div align="center">
     <img src="image/ch6/6-10r.PNG">
     <p><b>예제 6-10. 출력결과</b> </p>
- </div>      
+ </div>     
+
+---
+## Chapter 7<br>
+- ### 7장 소개<br>
+   자바스크립트는 프로토타입 기반 언어라서 '상속'개념이 존재하지 않습니다. 그러나 ES6에서 클래스 문법이 추가됐습니다. 이번 장에서는 자바스크립트의 클래스 문법에 대해 알아봅니다.
+  
+---
+- ### 예제 7-1<br>
+  <div align="center">
+    <img src="image/ch7/7-01.PNG">
+    <p><b>예제 7-1. 스태틱 메서드, 프로토타입 메서드</b> </p>
+  </div>
+     <p> 위 예제의 13번째 줄에서 Rectangle 함수를 new 연산자와 함께 호출해서 생성된 인스턴스 rect1에 할당하였습니다. 따라서 이 인스턴스에는 width, height 프로퍼티에 각각 3, 4의 값이 할당되어 있습니다. 14번째 줄은 정상 실행되지만 15번째 줄 rect1에는 isRectangle이라는 메서드에 접근할 수 없기 때문에 에러가 발생합니다
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-01r.PNG">
+    <p><b>예제 7-01. 출력결과</b> </p>
+ </div>    
+
+---
+- ### 예제 7-2<br>
+  <div align="center">
+    <img src="image/ch7/7-02.PNG">
+    <p><b>예제 7-2. 6-2-4절의 Grade 생성자 함수 및 인스턴스</b> </p>
+  </div>
+     <p> 위 예제는 앞장의 ES5로 쓰여진 예제입니다. ES6에서 도입한 클래스 개념은 prototype을 기반으로한 것이기 때문에 결국 프로토타입 체이닝을 잘 연결한 것입니다. 그러나, 위 예제를 보면 length 프로퍼티가 삭제 가능하다는 점, Grade.prototype에 빈 배열을 참조시켰다는 점 등 문제점들이 존재합니다.
+     </p>  
+
+---
+- ### 예제 7-3<br>
+  <div align="center">
+    <img src="image/ch7/7-03.PNG">
+    <p><b>예제 7-3. length 프로퍼티를 삭제한 경우</b> </p>
+  </div>
+     <p> 앞에서 말한 문제를 위 예제를 통해 확인할 수 있습니다. 13번째 줄에서 length 프로퍼티를 삭제하고 90을 push하니 0번째 인덱스에 들어가면서 length는 1이 되었씁니다. length는 configurable 속성이 false라 삭제가 불가능하지만 이러한 문제점들이 생깁니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-03r.PNG">
+    <p><b>예제 7-03. 출력결과</b> </p>
+ </div>  
+
+---
+- ### 예제 7-4<br>
+  <div align="center">
+    <img src="image/ch7/7-04.PNG">
+    <p><b>예제 7-4. 요소가 있는 배열을 prototype에 매칭한 경우</b> </p>
+  </div>
+     <p> 위 예제는 다른 문제점을 보여줍니다. 12번째 줄에서 length를 삭제하니 Grade.prototype의 length가 4였으므로 인덱스 4에 70을 넣고 g.length에 5를 부여하게 되었습니다. 이처럼 클래스에 있는 값이 인스턴스의 동작에 영향을 주면 안됩니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-04r.PNG">
+    <p><b>예제 7-04. 출력결과</b> </p>
+ </div>  
+
+---
+- ### 예제 7-5<br>
+  <div align="center">
+    <img src="image/ch7/7-05.PNG">
+    <p><b>예제 7-5. Rectangle. Square 클래스</b> </p>
+  </div>
+     <p> 위 예제는 클래스 개념을 익히기 위한 다른 예제입니다. 직사각형 클래스와 정사각형 클래스를 만들고 각 클래스에는 넓이를 구하는 getArea라는 메서드를 만들었습니다. 출력결과는 아래와 같습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-05r.PNG">
+    <p><b>예제 7-05. 출력결과</b> </p>
+ </div>   
+
+---
+- ### 예제 7-6<br>
+  <div align="center">
+    <img src="image/ch7/7-06.PNG">
+    <p><b>예제 7-6. Square 클래스 변형</b> </p>
+  </div>
+     <p> 코드를 간단하게 짜기 위해 정사각형은 height 프로퍼티에 width 값을 부여하는 형태로 구성하였습니다
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-06r.PNG">
+    <p><b>예제 7-06. 출력결과</b> </p>
+ </div>    
+
+---
+- ### 예제 7-7<br>
+  <div align="center">
+    <img src="image/ch7/7-07.PNG">
+    <p><b>예제 7-7. Rectangle을 상속하는 Square 클래스</b> </p>
+  </div>
+     <p> 더 코드를 간단하기 위해 상속 개념을 사용해봅니다. 11번째 줄에서 Square의 생성자 함수 내부에서 Rectangle의 생성자 함수를 함수로써 호출하였습니다. 그리고 13번째 줄에서는 메서드를 상속하기 위해 Square의 프로토타입 객체에 Rectangle의 인스턴스를 부여하였습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-07r.PNG">
+    <p><b>예제 7-07. 출력결과</b> </p>
+ </div>     
+
+---
+- ### 예제 7-8<br>
+  <div align="center">
+    <img src="image/ch7/7-08.PNG">
+    <p><b>예제 7-8. 클래스 상속 및 추상화 방법(1) - 인스턴스 생성 후 프로퍼티 제거</b> </p>
+  </div>
+     <p> 구조적인 안정성을 높이기 위해서 클래스는 구체적인 데이터를 지니지 않게 해야합니다. 이를 가능케하는 가장 쉬운 방법은 일단 만들고 나서 프로퍼티를 일일이 지우고 더는 새로운 프로퍼티를 추가할 수 없게 하는 것입니다. 이를 구현한 것이 이 예제입니다.
+     </p>  
+
+---
+- ### 예제 7-9<br>
+  <div align="center">
+    <img src="image/ch7/7-09.PNG">
+    <p><b>예제 7-9. 클래스 상속 및 추상화 방법(2) - 빈 함수를 활용</b> </p>
+  </div>
+     <p> 두 번쨔 방법으로는 아무런 프로퍼티를 생성하지 않는 빈 생성자 함수(Bridge)를 하나 만들어 그 prototype이 SuperClass의 prototype를 바라보게 합니다. 그 다음, SubClass의 prototype에는 Bridge의 인스턴스를 할당하면 됩니다. 이를 구현한 것이 이 예제입니다.
+     </p>  
+
+---
+- ### 예제 7-10<br>
+  <div align="center">
+    <img src="image/ch7/7-10.PNG">
+    <p><b>예제 7-10. 클래스 상속 및 추상화 방법(3) - Object.create 활용</b> </p>
+  </div>
+     <p> 마지막 방법으로는 ES5에 도입된 Object.crate를 이용한 방법입니다. 이는 SubClass의 prototype의 __proto__가 SubClass.prototype를 참조하고, SubClass.prototype에는 불필요한 인스턴스 프로퍼티가 남아있지 않게 됩니다. 이를 구현한 것이 이 예제입니다.
+     </p>       
+
+---
+- ### 예제 7-11<br>
+  <div align="center">
+    <img src="image/ch7/7-11.PNG">
+    <p><b>예제 7-11. 클래스 상속 및 추상화 방법 - 완성본(1) - 인스턴스 생성 후 프로퍼티 제거</b> </p>
+  </div>
+     <p> 앞에서 소개한 방법은 모두 기본적인 상속에는 성공했지만 SubClass의 인스턴스의 constructor는 여전히 SubClass를 가르키고 있습니다. 이를 해결하기 위해서 SubClass.prototype.constructor가 원래의 SubClass를 바라보도록 하면 됩니다. 이를 구현한 것이 아래 세 예제입니다.
+     </p>       
+
+---
+- ### 예제 7-12<br>
+  <div align="center">
+    <img src="image/ch7/7-12.PNG">
+    <p><b>예제 7-12. 클래스 상속 및 추상화 방법 - 완성본(2) - 빈 함수를 활용</b> </p>
+  </div>
+     <p> 
+     </p>       
+
+---
+- ### 예제 7-13<br>
+  <div align="center">
+    <img src="image/ch7/7-13.PNG">
+    <p><b>예제 7-13. 클래스 상속 및 추상화 방법 - 완성본(3) - Object.create 활용</b> </p>
+  </div>
+     <p> 
+     </p>      
+
+---
+- ### 예제 7-14<br>
+  <div align="center">
+    <img src="image/ch7/7-14.PNG">
+    <p><b>예제 7-14. 상위 클래스 접근 수단인 super 메서드 추가</b> </p>
+  </div>
+     <p> 추가적으로 하위 클래스이 메서드에서 상위 클래스의 메서드 실행 결과를 바탕으로 추가적인 작업을 할 때 사용하는 객체지향 언어의 클래스 문법인 'super'을 흉내낸 코드가 위 예제이다.
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-14r.PNG">
+    <p><b>예제 7-14. 출력결과</b> </p>
+ </div>          
+
+---
+- ### 예제 7-15<br>
+  <div align="center">
+    <img src="image/ch7/7-15.PNG">
+    <p><b>예제 7-15. ES5와 ES6의 클래스 문법 비교</b> </p>
+  </div>
+     <p> 앞에서 언급한 것처럼 ES6에서 본격적으로 클래스 문법이 도입되었고 ES5 체계에서의 생성자 함수 및 프로토타입과 ES6를 클래스 문법을 비교하여 보았습니다.
+     </p>  
+ <div align="center">
+    <img src="image/ch7/7-15r.PNG">
+    <p><b>예제 7-15. 출력결과</b> </p>
+ </div>         
+
+---
+- ### 예제 7-16<br>
+  <div align="center">
+    <img src="image/ch7/7-16.PNG">
+    <p><b>예제 7-16. ES6의 클래스 상속</b> </p>
+  </div>
+     <p> 이는 ES5에는 없는 클래스 상속에 관한 ES6의 클래스 상속 문법입니다.
+     </p>  
