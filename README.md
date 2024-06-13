@@ -1667,7 +1667,7 @@
     <img src="image/ch7/7-09.PNG">
     <p><b>예제 7-9. 클래스 상속 및 추상화 방법(2) - 빈 함수를 활용</b> </p>
   </div>
-     <p> 두 번쨔 방법으로는 아무런 프로퍼티를 생성하지 않는 빈 생성자 함수(Bridge)를 하나 만들어 그 prototype이 SuperClass의 prototype를 바라보게 합니다. 그 다음, SubClass의 prototype에는 Bridge의 인스턴스를 할당하면 됩니다. 이를 구현한 것이 이 예제입니다.
+     <p> 두 번째 방법으로는 아무런 프로퍼티를 생성하지 않는 빈 생성자 함수(Bridge)를 하나 만들어 그 prototype이 SuperClass의 prototype를 바라보게 합니다. 그 다음, SubClass의 prototype에는 Bridge의 인스턴스를 할당하면 됩니다. 이를 구현한 것이 이 예제입니다.
      </p>  
 
 ---
